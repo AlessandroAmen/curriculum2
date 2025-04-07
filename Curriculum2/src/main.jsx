@@ -4,9 +4,11 @@ import { BrowserRouter } from "react-router";
 
 import './index.css'
 import App from './App.jsx'
+import Navbar from './components/Navbar.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
+    <Navbar></Navbar>
   </StrictMode>,
 )
