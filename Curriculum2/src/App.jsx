@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <h1>benvenuto al mio sito</h1>
+      <h1>benvenuto nel mio sito</h1>
     </>
   )
 }
