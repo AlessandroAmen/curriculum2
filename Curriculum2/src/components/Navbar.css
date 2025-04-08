@@ -19,6 +19,6 @@
   }
   
   .navbar li a:hover {
-    background-color: #ddd;
+    background-color: rgb(234, 234, 234);
     color: black;
   }
