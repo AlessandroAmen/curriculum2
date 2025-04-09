@@ -1,5 +1,6 @@
 .navbar {
-    background-color: #e0f7fa;
+    /* background-color: #e0f7fa; */
+    background-color: rgb(41, 41, 41);
     overflow: hidden;
     list-style-type: none;
     margin: 0;
@@ -12,7 +13,7 @@
   
   .navbar li a {
     display: block;
-    color: black;
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;

@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar.jsx';
 import './curriculum.css';
+import { Link } from 'react-router-dom';
 
 function Curriculum() {
   return (
@@ -19,10 +20,23 @@ function Curriculum() {
             https://www.linkedin.com/in/alessandro-amenta-940227354/<br /><br />
             https://github.com/AlessandroAmen
           </p>
+          <h3>Skill personali per sviluppo WEB</h3>
+          <p>HTML, CSS, Javascript, PHP, Python, SQL, MySQL, Node, Express, React, VUE</p>
+          <p>alcuni linguaggi sono ancora da approfondire, troverai altro nella pagina della <Link to="/pages/skill">Skill</Link></p>
         </div>
         <div className='dxcurriculum'>
-          <h3>Esperienze</h3>
-          <p>Inserisci qui le tue esperienze.</p>
+
+          <h3>SKill personali</h3>
+          <p>Risoluzione dei problemi</p>
+          <p>Lavoro di squadra</p>
+          <p>Ottima conoscenza dell'inglese</p>
+          <p>Diploma alberhiero</p>
+         <p>Rigger certificato</p>
+         <h3>Lavori svolti</h3>
+         <p>Magazzieniere per squadra sportiva</p>
+         <p>Pizzaiolo</p>
+         <p>Consulente</p>
+         <p></p>
         </div>
       </div>
     </div>
