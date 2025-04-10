@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import Navskill from '../components/Navskill';
 
 const SkillDetail = () => {
   const { nome } = useParams(); 
@@ -15,6 +16,7 @@ const SkillDetail = () => {
 
   return (
     <div>
+        <Navskill></Navskill>
       <h1>Dettagli di {language.nome}</h1>
       <p><strong>Descrizione:</strong> {language.descrizione}</p>
       <p><strong>Percentuale:</strong> {language.percentuale}</p>
