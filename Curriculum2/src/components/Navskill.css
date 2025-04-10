@@ -6,6 +6,9 @@
     padding: 0;
   }
   
+  ul {
+        list-style: none;
+  }
   .navskill li {
     float: left;
   }

@@ -22,7 +22,7 @@ function Curriculum() {
           </p>
           <h3>Skill personali per sviluppo WEB</h3>
           <p>HTML, CSS, Javascript, PHP, Python, SQL, MySQL, Node, Express, React, VUE</p>
-          <p>alcuni linguaggi sono ancora da approfondire, troverai altro nella pagina della <Link to="/pages/skill">Skill</Link></p>
+          <p>Alcuni linguaggi sono ancora da approfondire, ci sono maggiori dettagli nella pagina della <Link to="/pages/skill">Skill</Link></p>
         </div>
         <div className='dxcurriculum'>
 
