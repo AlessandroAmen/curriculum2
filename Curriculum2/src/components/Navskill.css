@@ -1,0 +1,24 @@
+.navskill {
+    background-color: rgb(85, 85, 85);
+    overflow: hidden;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navskill li {
+    float: left;
+  }
+  
+  .navskill li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navskill li a:hover {
+    background-color: rgb(234, 234, 234);
+    color: black;
+  }

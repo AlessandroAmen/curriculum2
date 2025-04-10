@@ -7,7 +7,7 @@ function Navskill() {
   const languages = useSelector(state => state.languages);
 
   return (
-    <nav className="nav-skill">
+    <div className="navskill">
       <ul>
         {languages.map((language, index) => (
           <li key={index}>
@@ -17,7 +17,7 @@ function Navskill() {
           </li>
         ))}
       </ul>
-    </nav>
+    </div>
   );
 }
 
