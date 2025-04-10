@@ -26,7 +26,7 @@ function Curriculum() {
         </div>
         <div className='dxcurriculum'>
 
-          <h3>SKill personali</h3>
+          <h3>Skill personali</h3>
           <p>Risoluzione dei problemi</p>
           <p>Lavoro di squadra</p>
           <p>Ottima conoscenza dell'inglese</p>

@@ -1,12 +1,24 @@
-import Navbar from '../components/Navbar.jsx';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-function Skill() {
+const Skill = () => {
+  // Prendi lo stato globale dal Redux store
+  const languages = useSelector(state => state.languages);
+
   return (
-    <>
-      <h1>Skill</h1>
-      <p>Pagina delle skill.</p>
-    </>
+    <div>
+      <ul>
+        {languages.map((language, index) => (
+          <li key={index}>
+            <Link to={`/pages/skill/${language.nome.toLowerCase()}`}>
+              {language.nome}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
-}
+};
 
 export default Skill;
