@@ -46,6 +46,7 @@ const initialState = [
     descrizione: "Competente nello sviluppo backend con Node.",
     percentuale: "70%",
   },
+  
 ];
 
 const languagesSlice = createSlice({

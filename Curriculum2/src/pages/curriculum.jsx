@@ -18,8 +18,9 @@ function Curriculum() {
           <p>
             Augusta, Siracusa<br /><br />
             +393923177199<br /><br />
-            https://www.linkedin.com/in/alessandro-amenta-940227354/<br /><br />
-            https://github.com/AlessandroAmen
+            <a href="https://www.linkedin.com/in/alessandro-amenta-940227354/">Linkedin</a>
+            <br /><br />
+            <a href="https://github.com/AlessandroAmen">Github</a>
           </p>
           <h3>Skill personali per sviluppo WEB</h3>
           <p>HTML, CSS, Javascript, PHP, Python, SQL, MySQL, Node, Express, React, VUE</p>
