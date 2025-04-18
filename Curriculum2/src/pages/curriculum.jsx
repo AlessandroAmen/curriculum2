@@ -7,7 +7,7 @@ function Curriculum() {
     <div className='paginacurriculum'>
       <div className='topcurriculum'>
         <h2>Alessandro Amenta</h2>
-        <img src="path/to/your/photo.jpg" alt="Alessandro Amenta" />
+        <img id="fotoprofilo "src="/fotolinkedin.jpg" alt="Alessandro Amenta" />
       </div>
       <div className='bottomcurriculum'>
         <div className='sxcurriculum'>

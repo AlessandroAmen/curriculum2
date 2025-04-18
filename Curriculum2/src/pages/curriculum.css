@@ -39,3 +39,8 @@
 .dxcurriculum {
   background-color: #eeeeee; 
 }
+
+.topcurriculum img {
+  max-height: 100%;
+  margin-left: 50px;
+}
