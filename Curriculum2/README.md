@@ -51,7 +51,3 @@ Il sito sarà disponibile all'indirizzo `http://localhost:5173` (o altra porta s
 - Telefono: +39 392 317 7199
 - LinkedIn: [Alessandro Amenta](https://www.linkedin.com/in/alessandro-amenta-940227354/)
 - GitHub: [AlessandroAmen](https://github.com/AlessandroAmen)
-
-## 📄 Licenza
-
-Questo progetto è sotto licenza MIT.
