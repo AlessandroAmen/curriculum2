@@ -1,0 +1,33 @@
+.contatti-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contatti-container h1 {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.contatti-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contatti-container li {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.contatti-container a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contatti-container a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+} 
