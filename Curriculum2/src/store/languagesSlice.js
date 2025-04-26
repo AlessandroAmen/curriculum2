@@ -29,7 +29,7 @@ const initialState = [
   {
     nome: "MySQL",
     descrizione: "Buona conoscenza delle basi di MySQL per la gestione e l'interrogazione dei dati.",
-    percentuale: "50%",
+    percentuale: "80%",
   },
   {
     nome: "React",
@@ -44,7 +44,12 @@ const initialState = [
   {
     nome: "Node.js",
     descrizione: "Competente nello sviluppo backend con Node.",
-    percentuale: "70%",
+    percentuale: "75%",
+  },
+  {
+    nome: "laravel",
+    descrizione: "Competente nello sviluppo backend con laravel",
+    percentuale: "80%",
   },
   
 ];
