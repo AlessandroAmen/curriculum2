@@ -1,8 +1,11 @@
 import Navbar from '../components/Navbar.jsx';
 import './curriculum.css';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function Curriculum() {
+  const languages = useSelector(state => state.languages);
+  
   return (
     <div className='paginacurriculum'>
       <div className='topcurriculum'>
@@ -22,21 +25,24 @@ function Curriculum() {
             <br /><br />
             <a href="https://github.com/AlessandroAmen">Github</a>
           </p>
-          <h3>Skill personali per sviluppo WEB</h3>
-          <p>HTML, CSS, JavaScript, PHP, Python, SQL, MySQL, Node.js, Express.js, React, Vue.js</p>
-          <p>Alcuni linguaggi sono ancora da approfondire, ci sono maggiori dettagli nella pagina della <Link to="/pages/skill">Skill</Link></p>
+          <h3>Skills personali per sviluppo WEB</h3>
+          <p>{languages.map(lang => lang.nome).join(', ')}.</p>
+          <p>Alcuni linguaggi sono ancora da approfondire, ci sono maggiori dettagli nella pagina delle <Link to="/pages/skill">Skills</Link>.</p>
         </div>
         <div className='dxcurriculum'>
-          <h3>Skill personali</h3>
+          <h3>Competenze</h3>
           <p>Risoluzione dei problemi</p>
           <p>Lavoro di squadra</p>
           <p>Ottima conoscenza dell'inglese</p>
-          <p>Diploma alberghiero</p>
+          <h3>Istruzione e certificazioni</h3>
+          <p>Diploma di Istituto Professionale</p>
           <p>Certificazione Rigger</p>
-          <h3>Lavori svolti</h3>
-          <p>Magazziniere per squadra sportiva</p>
-          <p>Pizzaiolo</p>
+          <h3>Esperienza professionale attuale</h3>
+          <p>Tabaccaio</p>
+          <h3>Altre esperienze professionali</h3>
           <p>Consulente</p>
+          <p>Magazziniere</p>
+          <p>Pizzaiolo</p> 
         </div>
       </div>
     </div>

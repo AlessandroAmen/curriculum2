@@ -11,7 +11,7 @@ function Navbar (){
           <Link to="/pages/curriculum">Curriculum</Link>
         </li>
         <li>
-        <Link to="/pages/skill">Skill</Link>
+        <Link to="/pages/skill">Skills</Link>
          </li>
          <li>
         <Link to="/pages/contattami">Contattami</Link>
