@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = [
   {
     nome: "HTML",
-    descrizione: "Ottima strutturazione semantica del documento",
+    descrizione: "Ottima strutturazione semantica del documento.",
     percentuale: "90%",
   },
   {
@@ -13,38 +13,38 @@ const initialState = [
   },
   {
     nome: "JavaScript",
-    descrizione: "Competenza avanzata in JavaScript, con piena padronanza delle funzionalità ES6+ per codice pulito e performante.",
+    descrizione: "Competenza avanzata, con piena padronanza delle funzionalità ES6+ per codice pulito e performante.",
     percentuale: "90%",
   },
   {
     nome: "PHP",
-    descrizione: "Sviluppo backend robusto con PHP.",
+    descrizione: "Sviluppo backend robusto.",
     percentuale: "80%",
   },
   {
     nome: "Python",
-    descrizione: "Competenza avanzata in Python, con piena padronanza delle funzionalità ES6+ per codice pulito e performante.",
+    descrizione: "Competenza avanzata, con piena padronanza delle funzionalità ES6+ per codice pulito e performante.",
     percentuale: "80%",
   },
   {
     nome: "SQL",
-    descrizione: "Competente nella gestione e interrogazione di database SQL.",
+    descrizione: "Competenza nella gestione e interrogazione di database",
     percentuale: "80%",
   },
 
   {
     nome: "MySQL",
-    descrizione: "Buona conoscenza delle basi di MySQL per la gestione e l'interrogazione dei dati.",
+    descrizione: "Buona conoscenza delle basi per la gestione e l'interrogazione dei dati.",
     percentuale: "80%",
   },
   {
     nome: "Node.js",
-    descrizione: "Competente nello sviluppo backend con Node.",
+    descrizione: "Competenza nello sviluppo backend.",
     percentuale: "75%",
   },
   {
     nome: "Express.js",
-    descrizione: "Competente nello sviluppo backend con Express.js",
+    descrizione: "Competenza nello sviluppo backend.",
     percentuale: "75%",
   },
   {
@@ -54,12 +54,12 @@ const initialState = [
   },
   {
     nome: "Vue",
-    descrizione: "Familiarità con i concetti fondamentali di Vue.",
+    descrizione: "Familiarità con i concetti fondamentali.",
     percentuale: "60%",
   },
   {
     nome: "Laravel",
-    descrizione: "Competente nello sviluppo backend con laravel",
+    descrizione: "Competenza nello sviluppo backend.",
     percentuale: "80%",
   },
   

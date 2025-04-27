@@ -14,7 +14,7 @@ function Navbar (){
         <Link to="/pages/skill">Skills</Link>
          </li>
          <li>
-        <Link to="/pages/contattami">Contattami</Link>
+        <Link to="/pages/contattami">Contatti</Link>
          </li>
     </ul>
     ); 

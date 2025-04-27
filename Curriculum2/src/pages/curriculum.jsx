@@ -14,18 +14,17 @@ function Curriculum() {
       </div>
       <div className='bottomcurriculum'>
         <div className='sxcurriculum'>
-          <h3>Obiettivi personali</h3>
+          <h3>Obiettivi</h3>
           <p>Attualmente impiegato come dipendente in una tabaccheria, coltivo una forte passione per la programmazione, che studio con dedizione da autodidatta. 
             Il mio obiettivo professionale è entrare nel settore IT, concretizzando le mie competenze in continua crescita.</p>
           <h3>Dati personali</h3>
           <p>
             Augusta, Siracusa<br /><br />
-            +393923177199<br /><br />
             <a href="https://www.linkedin.com/in/alessandro-amenta-940227354/">Linkedin</a>
             <br /><br />
             <a href="https://github.com/AlessandroAmen">Github</a>
           </p>
-          <h3>Skills personali per sviluppo WEB</h3>
+          <h3>Conoscenze acquisite nello sviluppo web</h3>
           <p>{languages.map(lang => lang.nome).join(', ')}.</p>
           <p>Alcuni linguaggi sono ancora da approfondire, ci sono maggiori dettagli nella pagina delle <Link to="/pages/skill">Skills</Link>.</p>
         </div>
