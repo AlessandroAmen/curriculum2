@@ -1,27 +1,142 @@
 .navskill {
-    background-color: rgb(85, 85, 85);
-    overflow: hidden;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  ul {
-        list-style: none;
-  }
-  .navskill li {
-    float: left;
+  background: linear-gradient(135deg, var(--primary-gray), var(--secondary-gray));
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-x: auto;
+  overflow-y: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.navskill ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-width: max-content;
+}
+
+.navskill li {
+  position: relative;
+  margin: 0;
+}
+
+.navskill li a {
+  display: block;
+  color: var(--white);
+  text-align: center;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  transition: var(--transition-normal);
+  position: relative;
+  border-radius: var(--radius-sm);
+  margin: 0.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.navskill li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transition: var(--transition-normal);
+  z-index: -1;
+}
+
+.navskill li a:hover::before {
+  opacity: 1;
+}
+
+.navskill li a:hover {
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.navskill li a.active {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+/* Scrollbar personalizzata per mobile */
+.navskill::-webkit-scrollbar {
+  height: 4px;
+}
+
+.navskill::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navskill::-webkit-scrollbar-thumb {
+  background: var(--accent-blue);
+  border-radius: 2px;
+}
+
+.navskill::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-green);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navskill {
+    padding: 0.5rem;
   }
   
   .navskill li a {
-    display: block;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    margin: 0.125rem;
   }
-  
-  .navskill li a:hover {
-    background-color: rgb(234, 234, 234);
-    color: black;
+}
+
+@media (max-width: 480px) {
+  .navskill li a {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
   }
+}
+
+/* Animazione di entrata */
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navskill {
+  animation: slideInFromTop 0.5s ease-out;
+}
+
+.navskill li {
+  animation: fadeInScale 0.6s ease-out;
+  animation-delay: calc(var(--delay, 0) * 0.1s);
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

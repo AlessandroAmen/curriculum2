@@ -10,7 +10,10 @@ function Navskill() {
     <div className="navskill">
       <ul>
         {languages.map((language, index) => (
-          <li key={index}>
+          <li 
+            key={index}
+            style={{ '--delay': index }}
+          >
             <Link to={`/pages/skill/${language.nome.toLowerCase()}`}>
               {language.nome}
             </Link>
