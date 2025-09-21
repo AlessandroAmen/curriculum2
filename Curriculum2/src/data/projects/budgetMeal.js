@@ -5,7 +5,7 @@ export const budgetMealData = {
   description: "Applicazione web per la pianificazione dei pasti e il controllo del budget alimentare con deploy live",
   technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "React Context"],
   category: "frontend",
-  image: "/fotolinkedin.jpg",
+  image: "/Budget Meal/sfonfo Budget Meal.png",
   frontendLink: "https://github.com/AlessandroAmen/budget-meal-app",
   backendLink: null,
   liveLink: "https://budget-meal-app.vercel.app/",

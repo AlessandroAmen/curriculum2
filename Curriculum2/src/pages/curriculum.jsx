@@ -15,14 +15,13 @@ function Curriculum() {
       <div className='bottomcurriculum'>
         <div className='sxcurriculum'>
           <div className="section-with-icon">
-            <span className="section-icon">🎯</span>
+            <span className="section-icon"></span>
             <h3>Obiettivi</h3>
           </div>
-          <p>Attualmente impiegato come dipendente in una tabaccheria, coltivo una forte passione per la programmazione, che studio con dedizione da autodidatta. 
-            Il mio obiettivo professionale è entrare nel settore IT, concretizzando le mie competenze in continua crescita.</p>
+          <p>Ho una forte passione per lo sviluppo e sono un autodidatta: ho sempre imparato da solo, affrontando nuove tecnologie con entusiasmo e determinazione. Il mio obiettivo è entrare nel mondo della programmazione e sono pronto a dare il massimo, imparando rapidamente tutto ciò che serve per crescere e contribuire in modo concreto.</p>
           
           <div className="section-with-icon">
-            <span className="section-icon">📍</span>
+            <span className="section-icon"></span>
             <h3>Dati personali</h3>
           </div>
           <p>
@@ -38,7 +37,7 @@ function Curriculum() {
           </p>
           
           <div className="section-with-icon">
-            <span className="section-icon">💻</span>
+            <span className="section-icon"></span>
             <h3>Conoscenze acquisite nello sviluppo web</h3>
           </div>
           <div className="competenze-list">
@@ -53,17 +52,17 @@ function Curriculum() {
         
         <div className='dxcurriculum'>
           <div className="section-with-icon">
-            <span className="section-icon">⚡</span>
+            <span className="section-icon"></span>
             <h3>Competenze trasversali</h3>
           </div>
-          <p>✓ Risoluzione dei problemi</p>
-          <p>✓ Lavoro di squadra</p>
-          <p>✓ Ottima conoscenza dell'inglese</p>
-          <p>✓ Apprendimento autonomo</p>
-          <p>✓ Attenzione ai dettagli</p>
+          <p>Risoluzione dei problemi</p>
+          <p>Lavoro di squadra</p>
+          <p>Ottima conoscenza dell'inglese</p>
+          <p>Apprendimento autonomo</p>
+          <p>Attenzione ai dettagli</p>
           
           <div className="section-with-icon">
-            <span className="section-icon">🎓</span>
+            <span className="section-icon"></span>
             <h3>Istruzione e certificazioni</h3>
           </div>
           <p><strong>Diploma di Istituto Professionale</strong><br />
@@ -72,7 +71,7 @@ function Curriculum() {
              Competenze specializzate</p>
           
           <div className="section-with-icon">
-            <span className="section-icon">💼</span>
+            <span className="section-icon"></span>
             <h3>Esperienza professionale</h3>
           </div>
           <div className="experience-section">

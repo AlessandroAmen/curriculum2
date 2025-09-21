@@ -41,6 +41,29 @@
   background-clip: text;
   position: relative;
   z-index: 1;
+  margin-bottom: 10px;
+}
+
+.topcurriculum h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+  border-radius: 2px;
+  animation: lineExpand 2s ease-out;
+}
+
+@keyframes lineExpand {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 80px;
+  }
 }
 
 #fotoprofilo {

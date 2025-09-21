@@ -1,5 +1,6 @@
 import React from 'react';
 import './ProjectComponents.css';
+import { getTechColor } from '../data/helpers/projectHelpers';
 
 const ProjectOverview = ({ project }) => {
   if (!project) return null;
@@ -46,7 +47,16 @@ const ProjectOverview = ({ project }) => {
               <span className="info-label">Tecnologie:</span>
               <div className="tech-tags">
                 {project.technologies.map((tech, index) => (
-                  <span key={index} className="tech-tag">{tech}</span>
+                  <span 
+                    key={index} 
+                    className="tech-tag"
+                    style={{ 
+                      backgroundColor: getTechColor(tech),
+                      color: getTechColor(tech) === '#F7DF1E' ? '#000000' : '#FFFFFF' 
+                    }}
+                  >
+                    {tech}
+                  </span>
                 ))}
               </div>
             </div>
@@ -54,17 +64,17 @@ const ProjectOverview = ({ project }) => {
             <div className="project-links">
               {project.frontendLink && (
                 <a href={project.frontendLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                  <span>🔗</span> Frontend
+                  <span className="link-text">Frontend</span>
                 </a>
               )}
               {project.backendLink && (
                 <a href={project.backendLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                  <span>⚙️</span> Backend
+                  <span className="link-text">Backend</span>
                 </a>
               )}
               {project.liveLink && (
                 <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="project-link live-link">
-                  <span>🚀</span> Live Demo
+                  <span className="link-text">Live Demo</span>
                 </a>
               )}
             </div>

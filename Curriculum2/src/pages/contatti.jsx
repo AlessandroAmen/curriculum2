@@ -84,13 +84,13 @@ function Contatti() {
                 href="mailto:xela9827@gmail.com?subject=Opportunità di Collaborazione" 
                 className="cta-button primary"
               >
-                📧 Scrivimi ora
+                Scrivimi ora
               </a>
               <a 
                 href="tel:+393923177199" 
                 className="cta-button secondary"
               >
-                📞 Chiamami
+                Chiamami
               </a>
             </div>
           </div>
@@ -98,19 +98,7 @@ function Contatti() {
 
         <div className="contact-info">
           <div className="info-section">
-            <h3>🚀 Competenze Principali</h3>
-            <div className="skills-tags">
-              <span className="skill-tag">React</span>
-              <span className="skill-tag">Node.js</span>
-              <span className="skill-tag">Laravel</span>
-              <span className="skill-tag">TypeScript</span>
-              <span className="skill-tag">Next.js</span>
-              <span className="skill-tag">MySQL</span>
-            </div>
-          </div>
-          
-          <div className="info-section">
-            <h3>⏰ Disponibilità</h3>
+            <h3>Disponibilità</h3>
             <p>Disponibile per progetti freelance e opportunità full-time</p>
             <p>Tempo di risposta: entro 24 ore</p>
           </div>

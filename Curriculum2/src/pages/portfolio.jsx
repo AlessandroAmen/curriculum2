@@ -1,19 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { projectsData, getProjectsByCategory } from '../data/projectsData';
+import { projectsData, getTechColor } from '../data/projectsData';
 import './portfolio.css';
 
 function Portfolio() {
-  const [activeFilter, setActiveFilter] = useState('all');
-
-  const filteredProjects = getProjectsByCategory(activeFilter);
-
-  const categories = [
-    { key: 'all', label: 'Tutti i Progetti' },
-    { key: 'frontend', label: 'Frontend' },
-    { key: 'backend', label: 'Backend' },
-    { key: 'fullstack', label: 'Fullstack' }
-  ];
 
   return (
     <div className="portfolio">
@@ -25,28 +15,11 @@ function Portfolio() {
         </p>
       </div>
 
-      <div className="portfolio-filters">
-        {categories.map(category => (
-          <button
-            key={category.key}
-            className={`filter-btn ${activeFilter === category.key ? 'active' : ''}`}
-            onClick={() => setActiveFilter(category.key)}
-          >
-            {category.label}
-          </button>
-        ))}
-      </div>
-
       <div className="projects-grid">
-        {filteredProjects.map(project => (
+        {projectsData.map(project => (
           <div key={project.id} className="project-card">
             <div className="project-image">
               <img src={project.image} alt={project.title} />
-              <div className="project-overlay">
-                <Link to={`/pages/portfolio/${project.slug}`} className="view-details">
-                  Vedi Dettagli
-                </Link>
-              </div>
             </div>
             
             <div className="project-content">
@@ -55,28 +28,34 @@ function Portfolio() {
               <p className="project-description">{project.description}</p>
               
               <div className="project-tech">
-                {project.technologies.slice(0, 3).map((tech, index) => (
-                  <span key={index} className="tech-tag">{tech}</span>
+                {project.technologies.map((tech, index) => (
+                  <span 
+                    key={index} 
+                    className="tech-tag" 
+                    style={{ backgroundColor: getTechColor(tech) }}
+                  >
+                    {tech}
+                  </span>
                 ))}
-                {project.technologies.length > 3 && (
-                  <span className="tech-more">+{project.technologies.length - 3}</span>
-                )}
               </div>
               
               <div className="project-links">
+                <Link to={`/pages/portfolio/${project.slug}`} className="project-link details-link">
+                  Scopri tutto
+                </Link>
                 {project.frontendLink && (
                   <a href={project.frontendLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                    <span>🔗</span> Frontend
+                    Frontend
                   </a>
                 )}
                 {project.backendLink && (
                   <a href={project.backendLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                    <span>⚙️</span> Backend
+                    Backend
                   </a>
                 )}
                 {project.liveLink && (
-                  <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="project-link live-link">
-                    <span>🚀</span> Live Demo
+                  <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="project-link">
+                    Live Demo
                   </a>
                 )}
               </div>
@@ -84,13 +63,6 @@ function Portfolio() {
           </div>
         ))}
       </div>
-
-      {filteredProjects.length === 0 && (
-        <div className="no-projects">
-          <h3>Nessun progetto trovato</h3>
-          <p>Non ci sono progetti per la categoria selezionata.</p>
-        </div>
-      )}
     </div>
   );
 }

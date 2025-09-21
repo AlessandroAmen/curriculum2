@@ -17,11 +17,10 @@
 }
 
 .contatti-header h1 {
-  color: var(--primary-dark);
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--primary-dark), var(--accent-blue));
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -143,7 +142,7 @@
 
 /* === CTA SECTION === */
 .contact-cta {
-  background: linear-gradient(135deg, var(--primary-dark), var(--accent-blue));
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
   border-radius: 20px;
   padding: 3rem;
   margin-bottom: 3rem;
@@ -259,25 +258,7 @@
   margin-bottom: 0;
 }
 
-.skills-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
 
-.skill-tag {
-  background: var(--primary-dark);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: transform 0.3s ease;
-}
-
-.skill-tag:hover {
-  transform: scale(1.05);
-}
 
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
@@ -331,15 +312,6 @@
 
   .info-section {
     padding: 1.5rem;
-  }
-
-  .skills-tags {
-    gap: 0.5rem;
-  }
-
-  .skill-tag {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.8rem;
   }
 }
 
