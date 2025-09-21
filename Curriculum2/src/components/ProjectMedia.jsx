@@ -34,9 +34,20 @@ const ProjectMedia = ({ project }) => {
                   <span className="video-icon">▶️</span>
                   <p className="video-title">{video.title}</p>
                   <p className="video-description">{video.description}</p>
-                  <button className="video-play-btn">
-                    Guarda Video
-                  </button>
+                  {video.url ? (
+                    <a
+                      href={video.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="video-play-btn"
+                    >
+                      Guarda Video
+                    </a>
+                  ) : (
+                    <button className="video-play-btn" disabled>
+                      Guarda Video
+                    </button>
+                  )}
                 </div>
               </div>
             ))}

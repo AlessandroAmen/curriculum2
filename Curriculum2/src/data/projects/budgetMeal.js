@@ -42,19 +42,6 @@ export const budgetMealData = {
     }
   ],
   
-  videos: [
-    {
-      url: "#",
-      title: "Demo completa BudgetMeal",
-      description: "Panoramica di tutte le funzionalità: calcolo costi, pianificazione pasti e gestione dati"
-    },
-    {
-      url: "#",
-      title: "Tutorial: Come creare un pasto",
-      description: "Guida step-by-step per aggiungere ingredienti e calcolare il costo di un pasto"
-    }
-  ],
-  
   codeSnippets: [
     {
       title: "Custom Hook per localStorage - TypeScript",
