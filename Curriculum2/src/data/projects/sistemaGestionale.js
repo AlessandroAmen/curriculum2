@@ -2,9 +2,9 @@ export const sistemaGestionaleData = {
   id: 4,
   title: "Sistema Gestionale Web",
   slug: "sistema-gestionale",
-  description: "Applicazione fullstack per la gestione di dati aziendali con dashboard amministrativa",
+  description: "Applicazione backend per la gestione di dati aziendali con dashboard amministrativa",
   technologies: ["PHP", "Laravel", "MySQL", "JavaScript"],
-  category: "fullstack",
+  category: "backend",
   image: "/laravel/Screenshot 2025-09-21 alle 19.20.18.png",
   frontendLink: null,
   backendLink: "https://github.com/AlessandroAmen/laravel",
@@ -16,7 +16,7 @@ export const sistemaGestionaleData = {
     "API RESTful"
   ],
   detailedDescription: `Sistema web per la gestione aziendale sviluppato con Laravel, che include funzionalità complete di CRUD, autenticazione e pannello amministrativo.`,
-  objective: "Sviluppare competenze fullstack con Laravel",
+  objective: "Sviluppare competenze backend con Laravel",
   
   screenshots: [],
   
