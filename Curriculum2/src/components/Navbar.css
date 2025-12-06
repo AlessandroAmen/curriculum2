@@ -2,7 +2,6 @@
   background: rgba(42, 42, 42, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  overflow: hidden;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -10,92 +9,113 @@
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: stretch;
+  min-height: 60px;
 }
 
 .navbar li {
-  float: left;
+  display: flex;
+  align-items: stretch;
   position: relative;
 }
 
 .navbar li a {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #ffffff;
-  text-align: center;
-  padding: 1rem 1.5rem;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
   letter-spacing: 0.5px;
-  transition: all 0.3s ease-in-out;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Hover Effect con gradiente */
-.navbar li a::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
+  padding: 0 1.5rem;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transition: left 0.5s ease-in-out;
-}
-
-.navbar li a:hover::before {
-  left: 100%;
+  min-height: 60px;
+  background: transparent;
+  transition: background 0.3s ease;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .navbar li a:hover {
   background: linear-gradient(135deg, #3498db, #2ecc71);
   color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
 }
 
-/* Indicatore attivo */
 .navbar li a.active {
   background: linear-gradient(135deg, #3498db, #2ecc71);
   color: #ffffff;
 }
 
-.navbar li a.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 3px;
-  background: #ffffff;
-  border-radius: 2px;
+/* Curriculum item con switcher lingua */
+.curriculum-item {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+}
+
+.curriculum-item > a:first-child {
+  padding-right: 0.5rem;
+}
+
+.lang-switcher {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.7rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+  margin-left: 0.5rem;
+  margin-right: 1.5rem;
+  height: auto;
+  min-height: auto;
+  align-self: center;
+  transition: background 0.3s ease;
+}
+
+.lang-switcher:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .navbar {
-    position: relative;
+    flex-direction: column;
+    min-height: auto;
   }
   
   .navbar li {
-    float: none;
     width: 100%;
   }
   
   .navbar li a {
     text-align: left;
     padding: 0.75rem 1rem;
+    min-height: 50px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   .navbar li:last-child a {
     border-bottom: none;
   }
+
+  .curriculum-item {
+    flex-direction: column;
+  }
+
+  .curriculum-item > a:first-child {
+    padding-right: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .lang-switcher {
+    margin: 0.5rem 1rem;
+    align-self: flex-start;
+  }
 }
 
-/* Effetto di entrata */
+/* Animazione di entrata */
 @keyframes slideInDown {
   from {
     transform: translateY(-100%);

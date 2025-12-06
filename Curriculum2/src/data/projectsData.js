@@ -5,6 +5,8 @@ import { barberAppData } from './projects/barberApp.js';
 import { budgetMealData } from './projects/budgetMeal.js';
 import { curriculumAppData } from './projects/curriculumApp.js';
 import { sistemaGestionaleData } from './projects/sistemaGestionale.js';
+import { ecosysData } from './projects/ecosys.js';
+import { assicurazioneGestionaleData } from './projects/assicurazioneGestionale.js';
 
 // Import delle funzioni helper
 import { 
@@ -19,7 +21,10 @@ import {
 } from './helpers/projectHelpers.js';
 
 // Array principale con tutti i progetti
+// Ordine: prima progetti freelance (reali), poi progetti personali (hobby)
 export const projectsData = [
+  ecosysData,
+  assicurazioneGestionaleData,
   barberAppData,
   budgetMealData,
   curriculumAppData,
@@ -55,5 +60,7 @@ export {
   barberAppData,
   budgetMealData,
   curriculumAppData,
-  sistemaGestionaleData
+  sistemaGestionaleData,
+  ecosysData,
+  assicurazioneGestionaleData
 };

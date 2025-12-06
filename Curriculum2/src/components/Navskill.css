@@ -9,6 +9,10 @@
   padding: 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   white-space: nowrap;
+  position: sticky;
+  top: 60px;
+  z-index: 999;
+  width: 100%;
 }
 
 .navskill ul {

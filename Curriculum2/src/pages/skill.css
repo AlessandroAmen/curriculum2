@@ -2,7 +2,8 @@
 .skills-page {
   min-height: 100vh;
   background: linear-gradient(135deg, var(--background-light) 0%, var(--lighter-gray) 100%);
-  padding: 2rem 0;
+  padding: 0;
+  margin: 0;
 }
 
 .skills-header {
@@ -30,7 +31,7 @@
 .skills-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 2rem 2rem;
 }
 
 .chart-container {
@@ -143,6 +144,24 @@
   color: var(--text-light);
   text-align: right;
   font-weight: 600;
+}
+
+.skill-learn-more {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.skill-card:hover .skill-learn-more {
+  opacity: 1;
+  transform: translateY(-2px);
 }
 
 /* Icone per le tecnologie */

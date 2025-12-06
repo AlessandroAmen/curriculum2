@@ -1,0 +1,438 @@
+.skill-detail-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding-bottom: 50px;
+}
+
+.skill-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.back-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-5px);
+}
+
+.skill-header {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.skill-title-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.skill-icon-large {
+  font-size: 64px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-name-large {
+  font-size: 42px;
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.skill-description {
+  font-size: 18px;
+  color: #6c757d;
+  margin: 10px 0;
+}
+
+.skill-level-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Tabs Navigation */
+.tabs-navigation {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  background: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #6c757d;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tab-button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+/* Content Sections */
+.tab-content {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
+}
+
+.tab-content h2 {
+  color: #2c3e50;
+  font-size: 32px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #667eea;
+}
+
+/* Concetti Cards */
+.concetti-section {
+  animation: fadeIn 0.5s ease;
+}
+
+.concetto-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-left: 5px solid #667eea;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.concetto-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+}
+
+.concetto-card h3 {
+  color: #667eea;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.concetto-card p {
+  color: #495057;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.concetto-card ul {
+  margin-left: 20px;
+}
+
+.concetto-card li {
+  color: #495057;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* Esempi Cards */
+.esempi-section {
+  animation: fadeIn 0.5s ease;
+}
+
+.esempio-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  border: 2px solid #e9ecef;
+}
+
+.esempio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.esempio-header h3 {
+  color: #2c3e50;
+  font-size: 20px;
+  margin: 0;
+}
+
+.copy-button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.copy-button:hover {
+  background: #764ba2;
+  transform: scale(1.05);
+}
+
+.esempio-desc {
+  color: #6c757d;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.code-block {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 15px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.code-block code {
+  color: #ecf0f1;
+}
+
+.code-output {
+  background: #e8f5e9;
+  border-left: 4px solid #4caf50;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+}
+
+.code-output strong {
+  color: #2e7d32;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.code-output pre {
+  margin: 0;
+  color: #1b5e20;
+  font-family: 'Courier New', monospace;
+}
+
+/* Esercizi Cards */
+.esercizi-section {
+  animation: fadeIn 0.5s ease;
+}
+
+.esercizio-card {
+  background: linear-gradient(135deg, #fff5e6 0%, #ffe0b2 100%);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  border: 2px solid #ffb74d;
+  position: relative;
+}
+
+.esercizio-number {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: #ff9800;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.esercizio-card h3 {
+  color: #e65100;
+  font-size: 22px;
+  margin: 10px 0 15px 0;
+}
+
+.esercizio-desc {
+  color: #5d4037;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.esercizio-requisiti {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.esercizio-requisiti strong {
+  color: #e65100;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.esercizio-requisiti ul {
+  margin-left: 20px;
+}
+
+.esercizio-requisiti li {
+  color: #5d4037;
+  margin: 8px 0;
+}
+
+.esercizio-hint {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.esercizio-hint summary {
+  font-weight: 600;
+  color: #e65100;
+  cursor: pointer;
+  user-select: none;
+}
+
+.esercizio-hint p {
+  margin-top: 10px;
+  color: #5d4037;
+}
+
+/* Tips Cards */
+.tips-section {
+  animation: fadeIn 0.5s ease;
+}
+
+.tip-card {
+  display: flex;
+  gap: 20px;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  border: 2px solid #4caf50;
+}
+
+.tip-icon {
+  font-size: 40px;
+  flex-shrink: 0;
+}
+
+.tip-content h3 {
+  color: #2e7d32;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.tip-content p {
+  color: #1b5e20;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.tip-esempio {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  overflow-x: auto;
+}
+
+/* No Content Message */
+.no-content {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+  font-size: 18px;
+}
+
+.not-found {
+  text-align: center;
+  padding: 100px 20px;
+  color: white;
+}
+
+.not-found h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skill-title-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .skill-name-large {
+    font-size: 32px;
+  }
+
+  .tabs-navigation {
+    flex-direction: column;
+  }
+
+  .tab-button {
+    width: 100%;
+  }
+
+  .esempio-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .tip-card {
+    flex-direction: column;
+  }
+}
+

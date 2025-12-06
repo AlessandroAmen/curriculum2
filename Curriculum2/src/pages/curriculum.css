@@ -1,69 +1,36 @@
 .paginacurriculum {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--background-light) 0%, var(--lighter-gray) 100%);
+  background: #f5f5f5;
   padding: 2rem 0;
-}
-
-.topcurriculum {
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary-gray));
-  color: var(--white);
-  padding: 3rem 2rem;
-  margin: 2rem auto;
-  max-width: 1200px;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-xl);
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 2rem;
-  position: relative;
-  overflow: hidden;
+  align-items: flex-start;
 }
 
-.topcurriculum::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-  pointer-events: none;
+.curriculum-container {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  min-height: calc(100vh - 4rem);
+  width: 210mm; /* Larghezza A4 */
+  max-width: 210mm;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.topcurriculum h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: relative;
-  z-index: 1;
-  margin-bottom: 10px;
+/* Colonna Sinistra - Sfondo Scuro */
+.left-column {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: #ffffff;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.topcurriculum h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
-  border-radius: 2px;
-  animation: lineExpand 2s ease-out;
-}
-
-@keyframes lineExpand {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 80px;
-  }
+.profile-section {
+  text-align: left;
+  margin-bottom: 1rem;
 }
 
 #fotoprofilo {
@@ -71,179 +38,267 @@
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid var(--white);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  transition: var(--transition-normal);
-  position: relative;
-  z-index: 1;
-}
-
-#fotoprofilo:hover {
-  transform: scale(1.1);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
-}
-
-.bottomcurriculum {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-.sxcurriculum,
-.dxcurriculum {
-  background: var(--white);
-  padding: 2rem;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  transition: var(--transition-normal);
-}
-
-.sxcurriculum:hover,
-.dxcurriculum:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-.sxcurriculum h3,
-.dxcurriculum h3 {
-  color: var(--primary-dark);
-  font-size: 1.4rem;
+  border: 3px solid #ffffff;
   margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--light-gray);
-  position: relative;
+  display: block;
 }
 
-.sxcurriculum h3::after,
-.dxcurriculum h3::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 50px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+.left-column h1.name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ff69b4 !important;
+  margin: 0.5rem 0;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #ff69b4 !important;
+  background-clip: unset !important;
 }
 
-.sxcurriculum p,
-.dxcurriculum p {
-  color: var(--text-light);
-  line-height: 1.6;
-  margin-bottom: 1rem;
+.job-title {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin: 0.5rem 0;
+  text-align: left;
+  font-weight: 300;
 }
 
-/* Stili specifici per i link */
-.sxcurriculum a,
-.dxcurriculum a {
-  color: var(--accent-blue);
-  font-weight: 600;
-  transition: var(--transition-normal);
-}
-
-.sxcurriculum a:hover,
-.dxcurriculum a:hover {
-  color: var(--accent-green);
-  text-decoration: none;
-}
-
-/* Lista competenze responsive */
-.competenze-list {
+.birth-date {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 1rem 0;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 1rem;
+  text-align: left;
 }
 
-.competenza-tag {
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
-  color: var(--white);
-  padding: 0.3rem 0.8rem;
-  border-radius: var(--radius-md);
+.birth-date .section-title-pink {
+  margin-bottom: 0.25rem;
+  text-align: left;
+}
+
+.birth-date .section-text-white {
+  margin: 0;
+  text-align: left;
+}
+
+.section-left {
+  margin-bottom: 1.5rem;
+}
+
+.section-title-pink {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ff69b4;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-text-white {
   font-size: 0.85rem;
-  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 300;
 }
 
-/* Sezioni con icone */
-.section-with-icon {
+.skill-list-white {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-list-white li {
+  color: #ffffff;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  margin-bottom: 0.4rem;
+  font-weight: 300;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.skill-list-white li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #ffffff;
+}
+
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+
+.contact-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+.contact-link-white {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 300;
+  transition: none;
+  flex: 1;
+}
+
+.contact-link-white:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.contact-text-white {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 300;
+  flex: 1;
+}
+
+/* Colonna Destra - Sfondo Bianco */
+.right-column {
+  background: #ffffff;
+  color: #000000;
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.portfolio-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.divider {
+  height: 1px;
+  background: #000000;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.section-right {
+  margin-bottom: 1.5rem;
+}
+
+.section-title-black {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000000;
   margin-bottom: 1rem;
 }
 
-.section-icon {
+.section-description {
+  font-size: 0.85rem;
+  color: #666666;
+  font-style: italic;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.tech-item {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.tech-label {
+  font-size: 0.9rem;
+  color: #000000;
+  display: inline;
+}
+
+.tech-value {
+  font-size: 0.9rem;
+  color: #000000;
+  font-weight: 300;
+}
+
+.project-section {
+  margin-bottom: 1.5rem;
+}
+
+.project-title {
   font-size: 1.2rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 0.25rem 0;
 }
 
-/* Experience Section Styles */
-.experience-section {
-  margin-top: 1rem;
+.project-subtitle {
+  font-size: 0.9rem;
+  color: #000000;
+  margin: 0 0 0.5rem 0;
+  font-weight: 300;
 }
 
-.experience-section p:first-child {
-  color: var(--primary-color);
-  font-weight: 600;
+.project-tags {
+  font-size: 0.9rem;
+  color: #000000;
+  margin: 0 0 0.75rem 0;
+  font-weight: 300;
+}
+
+.project-tag-link {
+  color: #0066cc;
+  text-decoration: underline;
+  font-weight: 300;
+}
+
+.project-tag-link:hover {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.project-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-features li {
+  color: #000000;
+  font-size: 0.9rem;
+  line-height: 1.6;
   margin-bottom: 0.5rem;
-  margin-top: 1.5rem;
+  font-weight: 300;
+  padding-left: 1rem;
+  position: relative;
 }
 
-.experience-section p:first-child:first-of-type {
-  margin-top: 0;
-}
-
-/* Animazioni di entrata */
-.sxcurriculum {
-  animation: slideInLeft 0.6s ease-out;
-}
-
-.dxcurriculum {
-  animation: slideInRight 0.6s ease-out;
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.project-features li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #000000;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .bottomcurriculum {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .curriculum-container {
+    grid-template-columns: 300px 1fr;
+    width: 100%;
+    max-width: 100%;
   }
-  
-  .topcurriculum {
-    margin: 1rem;
-    padding: 2rem 1rem;
+
+  .left-column {
+    padding: 1.5rem 1rem;
   }
-  
-  .topcurriculum h2 {
-    font-size: 2rem;
-  }
-  
-  #fotoprofilo {
-    width: 100px;
-    height: 100px;
+
+  .right-column {
+    padding: 1.5rem 1.5rem;
   }
 }
 
@@ -251,51 +306,45 @@
   .paginacurriculum {
     padding: 1rem 0;
   }
-  
-  .topcurriculum {
-    flex-direction: column;
-    text-align: center;
-    margin: 0.5rem;
-    padding: 1.5rem 1rem;
+
+  .curriculum-container {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
   }
-  
-  .topcurriculum h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+
+  .left-column {
+    padding: 2rem 1.5rem;
   }
-  
-  .bottomcurriculum {
-    padding: 0 1rem;
-    gap: 1rem;
+
+  .right-column {
+    padding: 2rem 1.5rem;
   }
-  
-  .sxcurriculum,
-  .dxcurriculum {
-    padding: 1.5rem;
-  }
-  
-  .competenze-list {
-    justify-content: center;
+
+  .portfolio-title {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .topcurriculum h2 {
+  .left-column {
+    padding: 1.5rem 1rem;
+  }
+
+  .right-column {
+    padding: 1.5rem 1rem;
+  }
+
+  .name {
     font-size: 1.5rem;
   }
-  
+
+  .portfolio-title {
+    font-size: 1.75rem;
+  }
+
   #fotoprofilo {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .sxcurriculum,
-  .dxcurriculum {
-    padding: 1rem;
-  }
-  
-  .competenza-tag {
-    font-size: 0.8rem;
-    padding: 0.25rem 0.6rem;
+    width: 100px;
+    height: 100px;
   }
 }

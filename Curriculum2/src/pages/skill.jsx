@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import Navskill from '../components/Navskill';
@@ -9,6 +10,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 const Skill = () => {
   const languages = useSelector(state => state.languages);
+  const navigate = useNavigate();
   const [animatedPercentages, setAnimatedPercentages] = useState({});
 
   useEffect(() => {
@@ -199,7 +201,12 @@ const Skill = () => {
 
         <div className="skills-grid">
           {languages.map((lang, index) => (
-            <div key={index} className="skill-card">
+            <div 
+              key={index} 
+              className="skill-card"
+              onClick={() => navigate(`/pages/skill/${lang.nome.toLowerCase()}`)}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="skill-name">
                 <span className="tech-icon">{getTechIcon(lang.nome)}</span>
                 {lang.nome}
@@ -220,6 +227,9 @@ const Skill = () => {
               </div>
               <div className="skill-level">
                 Livello: {getSkillLevel(parseInt(lang.percentuale))}
+              </div>
+              <div className="skill-learn-more">
+                📚 Clicca per studiare →
               </div>
             </div>
           ))}
