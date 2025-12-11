@@ -1,34 +1,31 @@
-import { Link, useLocation } from "react-router-dom"; 
+import { Link } from "react-router-dom"; 
+import { useTranslation } from "../hooks/useTranslation";
+import LanguageToggle from "./LanguageToggle";
 import "./Navbar.css";
 
 function Navbar (){
-    const location = useLocation();
-    const isEnglishCV = location.pathname === '/pages/curriculum-en';
-    const isItalianCV = location.pathname === '/pages/curriculum';
+    const { t } = useTranslation();
     
     return ( 
     <ul className="navbar">
        <li>
-          <Link to="/">Home</Link>
+          <Link to="/">{t('common.home')}</Link>
         </li>        
-        <li className="curriculum-item">
-          <Link to="/pages/curriculum">Curriculum</Link>
-          {isItalianCV && (
-            <Link to="/pages/curriculum-en" className="lang-switcher">EN</Link>
-          )}
-          {isEnglishCV && (
-            <Link to="/pages/curriculum" className="lang-switcher">IT</Link>
-          )}
+        <li>
+          <Link to="/pages/curriculum">{t('common.curriculum')}</Link>
         </li>
         <li>
-        <Link to="/pages/skill">Skills</Link>
-         </li>
-         <li>
-        <Link to="/pages/portfolio">Portfolio</Link>
-         </li>
-         <li>
-        <Link to="/pages/contattami">Contatti</Link>
-         </li>
+          <Link to="/pages/skill">{t('common.skills')}</Link>
+        </li>
+        <li>
+          <Link to="/pages/portfolio">{t('common.portfolio')}</Link>
+        </li>
+        <li>
+          <Link to="/pages/contattami">{t('common.contacts')}</Link>
+        </li>
+        <li className="language-toggle-container">
+          <LanguageToggle />
+        </li>
     </ul>
     ); 
 }   

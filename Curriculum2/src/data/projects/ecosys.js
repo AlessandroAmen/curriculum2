@@ -5,7 +5,7 @@ export const ecosysData = {
   description: "Sito vetrina per azienda di bonifiche ambientali e industriali",
   technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   category: "frontend",
-  image: "/fotolinkedin.jpg",
+  image: "/copertinaecosys.png",
   frontendLink: null,
   backendLink: null,
   liveLink: "https://ecosys-alternative.vercel.app/",

@@ -5,7 +5,7 @@ export const curriculumAppData = {
   description: "Applicazione web React per presentare il curriculum con grafici interattivi delle competenze",
   technologies: ["React", "Redux", "Chart.js", "CSS3"],
   category: "frontend",
-  image: "/fotolinkedin.jpg",
+  image: "/curriculuminterattivosfondo.png",
   frontendLink: "https://github.com/AlessandroAmen/curriculum2",
   backendLink: null,
   liveLink: null,

@@ -7,6 +7,10 @@ import './index.css';
 import AppRoutes from './routes.jsx';
 import Navbar from './components/Navbar.jsx';
 
+// Inizializza la lingua nell'HTML
+const savedLanguage = localStorage.getItem('language') || 'it';
+document.documentElement.lang = savedLanguage;
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}> 

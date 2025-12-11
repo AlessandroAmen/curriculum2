@@ -1,8 +1,10 @@
 import Navbar from '../components/Navbar.jsx';
 import './curriculum.css';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '../hooks/useTranslation';
 
 function Curriculum() {
+  const { t } = useTranslation();
   return (
     <div className='paginacurriculum'>
       <div className='curriculum-container'>
@@ -11,30 +13,29 @@ function Curriculum() {
           <div className="profile-section">
         <img id="fotoprofilo" src="/fotolinkedin.jpg" alt="Alessandro Amenta" />
             <h1 className="name">Alessandro Amenta</h1>
-            <p className="job-title">Full stack web developer</p>
+            <p className="job-title">{t('curriculum.jobTitle')}</p>
             <div className="birth-date">
-              <span className="section-title-pink">DATA DI NASCITA</span>
-              <span className="section-text-white">27/05/1998</span>
+              <span className="section-title-pink">{t('curriculum.birthDate')}</span>
+              <span className="section-text-white">{t('curriculum.birthDateValue')}</span>
             </div>
       </div>
 
           <div className="section-left">
-            <h3 className="section-title-pink">CHI SONO</h3>
-            <p className="section-text-white">Ho una forte passione per lo sviluppo e sono un autodidatta: ho sempre imparato da solo, affrontando nuove tecnologie con entusiasmo e determinazione. Il mio obiettivo è entrare nel mondo della programmazione e sono pronto a dare il massimo, imparando rapidamente tutto ciò che serve per crescere e contribuire in modo concreto.</p>
+            <h3 className="section-title-pink">{t('curriculum.about.title')}</h3>
+            <p className="section-text-white">{t('curriculum.about.text')}</p>
           </div>
           
           <div className="section-left">
-            <h3 className="section-title-pink">SOFT SKILL</h3>
+            <h3 className="section-title-pink">{t('curriculum.softSkills.title')}</h3>
             <ul className="skill-list-white">
-              <li>Problem solving</li>
-              <li>Lavoro di squadra</li>
-              <li>Autonomia</li>
-              <li>Molto tempo disponibile</li>
+              {t('curriculum.softSkills.items').map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </div>
 
           <div className="section-left">
-            <h3 className="section-title-pink">CONTATTI</h3>
+            <h3 className="section-title-pink">{t('curriculum.contacts.title')}</h3>
             <div className="contacts-list">
               <div className="contact-item">
                 <a href="https://github.com/AlessandroAmen" target="_blank" rel="noopener noreferrer" className="contact-link-white">github</a>
@@ -46,135 +47,123 @@ function Curriculum() {
                 <a href="tel:+393923177199" className="contact-link-white">+393923177199</a>
               </div>
               <div className="contact-item">
-                <span className="contact-text-white">Augusta, Sicilia</span>
+                <span className="contact-text-white">{t('curriculum.contacts.location')}</span>
               </div>
             </div>
           </div>
 
           <div className="section-left">
-            <h3 className="section-title-pink">LINGUE</h3>
+            <h3 className="section-title-pink">{t('curriculum.languages.title')}</h3>
             <ul className="skill-list-white">
-              <li>Italiano (madrelingua)</li>
-              <li>Inglese (ottimo, parlato, lettura, documentazione tecnica)</li>
+              {t('curriculum.languages.items').map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </div>
         </div>
         
         {/* Colonna Destra - Sfondo Bianco */}
         <div className='right-column'>
-          <h2 className="portfolio-title">PORTFOLIO</h2>
+          <h2 className="portfolio-title">{t('curriculum.portfolio.title')}</h2>
           <div className="divider"></div>
 
           <div className="section-right">
-            <h3 className="section-title-black">Competenze tecniche</h3>
+            <h3 className="section-title-black">{t('curriculum.technicalSkills.title')}</h3>
             
             <div className="tech-item">
-              <span className="tech-label"><strong>Frontend & UI/UX :</strong></span>
-              <span className="tech-value">Javascript, Typescript, React, React Native, Next.js, Tailwind CSS, UI/UX Design</span>
+              <span className="tech-label"><strong>{t('curriculum.technicalSkills.frontend')}</strong></span>
+              <span className="tech-value">{t('curriculum.technicalSkills.frontendValue')}</span>
             </div>
 
             <div className="tech-item">
-              <span className="tech-label"><strong>Backend:</strong></span>
-              <span className="tech-value">Database, Laravel, REST API, SQL, MYSQL, Node.js</span>
+              <span className="tech-label"><strong>{t('curriculum.technicalSkills.backend')}</strong></span>
+              <span className="tech-value">{t('curriculum.technicalSkills.backendValue')}</span>
             </div>
 
             <div className="tech-item">
-              <span className="tech-label"><strong>Tools:</strong></span>
-              <span className="tech-value">GitHub, Deploy e ottimizzazione produzione, cursor</span>
+              <span className="tech-label"><strong>{t('curriculum.technicalSkills.tools')}</strong></span>
+              <span className="tech-value">{t('curriculum.technicalSkills.toolsValue')}</span>
             </div>
           </div>
 
           <div className="divider"></div>
 
           <div className="section-right">
-            <h3 className="section-title-black">Progetti Freelance</h3>
-            <p className="section-description">Progetti reali sviluppati per clienti come freelancer</p>
+            <h3 className="section-title-black">{t('curriculum.portfolio.freelance.title')}</h3>
+            <p className="section-description">{t('curriculum.portfolio.freelance.description')}</p>
           </div>
 
           <div className="project-section">
-            <h3 className="project-title">Ecosys</h3>
-            <p className="project-subtitle">- Sito vetrina aziendale</p>
+            <h3 className="project-title">{t('curriculum.portfolio.ecosys.title')}</h3>
+            <p className="project-subtitle">{t('curriculum.portfolio.ecosys.subtitle')}</p>
             <p className="project-tags">
-              <Link to="/pages/portfolio/ecosys" className="project-tag-link">Frontend</Link> | <Link to="/pages/portfolio/ecosys" className="project-tag-link">Deploy</Link>
+              <Link to="/pages/portfolio/ecosys" className="project-tag-link">{t('portfolio.frontend')}</Link> | <Link to="/pages/portfolio/ecosys" className="project-tag-link">{t('portfolio.liveDemo')}</Link>
             </p>
             <ul className="project-features">
-              <li>Sito vetrina professionale per azienda di bonifiche ambientali e industriali</li>
-              <li>Sviluppo con Next.js e TypeScript</li>
-              <li>Design moderno e responsive</li>
-              <li>Form di contatto integrato</li>
-              <li>Deploy su Vercel (sito momentaneo in attesa di authcode)</li>
-              <li>Progetto sviluppato come freelancer</li>
+              {t('curriculum.portfolio.ecosys.features').map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
             </ul>
           </div>
 
           <div className="divider"></div>
 
           <div className="project-section">
-            <h3 className="project-title">Gestionale Assicurazione</h3>
-            <p className="project-subtitle">- Automazione WhatsApp</p>
+            <h3 className="project-title">{t('curriculum.portfolio.insurance.title')}</h3>
+            <p className="project-subtitle">{t('curriculum.portfolio.insurance.subtitle')}</p>
             <p className="project-tags">
-              <span className="project-tag-link">Fullstack</span>
+              <span className="project-tag-link">{t('portfolio.backend')}</span>
             </p>
             <ul className="project-features">
-              <li>Sistema gestionale per invio automatico di messaggi WhatsApp</li>
-              <li>Caricamento e elaborazione file CSV con dati clienti</li>
-              <li>Integrazione con WhatsApp API</li>
-              <li>Dashboard di monitoraggio invii</li>
-              <li>Gestione template messaggi personalizzati</li>
-              <li>Sistema privato sviluppato come freelancer</li>
+              {t('curriculum.portfolio.insurance.features').map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
             </ul>
           </div>
 
           <div className="divider"></div>
 
           <div className="section-right">
-            <h3 className="section-title-black">Progetti Personali</h3>
-            <p className="section-description">Progetti sviluppati per apprendimento e crescita personale</p>
+            <h3 className="section-title-black">{t('curriculum.portfolio.personal.title')}</h3>
+            <p className="section-description">{t('curriculum.portfolio.personal.description')}</p>
           </div>
 
           <div className="project-section">
-            <h3 className="project-title">BarbierApp</h3>
-            <p className="project-subtitle">- Prenotazione appuntamenti barbiere</p>
+            <h3 className="project-title">{t('curriculum.portfolio.barberApp.title')}</h3>
+            <p className="project-subtitle">{t('curriculum.portfolio.barberApp.subtitle')}</p>
             <p className="project-tags">
-              <Link to="/pages/portfolio/barber-app" className="project-tag-link">Frontend</Link> | <Link to="/pages/portfolio/barber-app" className="project-tag-link">Backend</Link>
+              <Link to="/pages/portfolio/barber-app" className="project-tag-link">{t('portfolio.frontend')}</Link> | <Link to="/pages/portfolio/barber-app" className="project-tag-link">{t('portfolio.backend')}</Link>
             </p>
             <ul className="project-features">
-              <li>App mobile e backend per prenotare appuntamenti presso barbieri locali</li>
-              <li>Sviluppo mobile con React Native</li>
-              <li>Backend API in Laravel, database TiDB</li>
-              <li>Login/registrazione utenti, gestione ruoli admin/barbiere</li>
-              <li>Calendario integrato e selezione fasce orarie</li>
-              <li>Gestione anagrafiche barber shop e personale</li>
-              <li>Focus su esperienza utente e funzionalità reali</li>
+              {t('curriculum.portfolio.barberApp.features').map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
             </ul>
           </div>
 
           <div className="divider"></div>
 
           <div className="project-section">
-            <h3 className="project-title">BudgetMeal</h3>
-            <p className="project-subtitle">- Gestione spesa e pasti</p>
+            <h3 className="project-title">{t('curriculum.portfolio.budgetMeal.title')}</h3>
+            <p className="project-subtitle">{t('curriculum.portfolio.budgetMeal.subtitle')}</p>
             <p className="project-tags">
-              <Link to="/pages/portfolio/budget-meal" className="project-tag-link">Frontend</Link> | <Link to="/pages/portfolio/budget-meal" className="project-tag-link">Deploy</Link>
+              <Link to="/pages/portfolio/budget-meal" className="project-tag-link">{t('portfolio.frontend')}</Link> | <Link to="/pages/portfolio/budget-meal" className="project-tag-link">{t('portfolio.liveDemo')}</Link>
             </p>
             <ul className="project-features">
-              <li>Applicazione web per la pianificazione dei pasti e il controllo del budget alimentare</li>
-              <li>Gestione centralizzata dello stato con React Context</li>
-              <li>Calcolo dinamico dei costi di ricette e pasti</li>
-              <li>Import/export dati in JSON per backup e migrazione</li>
-              <li>UI responsive, animazioni leggere</li>
-              <li>Pianificazione pasti settimanale con riepilogo automatico</li>
-              <li>Architettura estendibile per nuove funzionalità</li>
+              {t('curriculum.portfolio.budgetMeal.features').map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
             </ul>
           </div>
 
           <div className="divider"></div>
 
           <div className="project-section">
-            <h3 className="project-title">Altri progetti</h3>
+            <h3 className="project-title">{t('curriculum.portfolio.otherProjects.title')}</h3>
             <ul className="project-features">
-              <li>Ho sviluppato diversi progetti minori usando tecnologie moderne</li>
-              <li>Continuo a sperimentare e imparare con piccole app web e mobile</li>
+              {t('curriculum.portfolio.otherProjects.features').map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
             </ul>
           </div>
         </div>

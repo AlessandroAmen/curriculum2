@@ -7,62 +7,93 @@ const initialState = [
     percentuale: "90%",
     concettiChiave: [
       {
-        titolo: "Struttura Base di un Documento HTML",
-        spiegazione: "Ogni pagina HTML ha una struttura fondamentale che definisce come il browser interpreta il contenuto.",
+        titolo: "🏗️ Struttura Base",
+        spiegazione: "Ogni pagina HTML inizia con una struttura fondamentale che definisce come il browser interpreta il contenuto.",
         punti: [
-          "<!DOCTYPE html> - Dichiara che il documento è HTML5",
-          "<html> - Elemento radice che contiene tutto il contenuto",
-          "<head> - Contiene metadati (title, meta, link CSS, ecc.)",
-          "<body> - Contiene il contenuto visibile della pagina"
+          "<!DOCTYPE html> - Dichiarazione iniziale (la prima riga)",
+          "<html> - Elemento radice (root)",
+          "<head> - Contiene i metadati (non visibile nella pagina)",
+          "<title> - Titolo della scheda del browser",
+          "<meta> - Definisce i metadati (es. charset, viewport)",
+          "<link> - Collega file esterni (es. CSS)",
+          "<script> - Inserisce o collega codice JavaScript",
+          "<body> - Contiene i contenuti visibili della pagina"
         ]
       },
       {
-        titolo: "Tag Semantici",
-        spiegazione: "I tag semantici descrivono il significato del contenuto, non solo l'aspetto. Migliorano SEO e accessibilità.",
+        titolo: "🧱 Elementi e Semantica",
+        spiegazione: "I tag HTML descrivono la struttura e il significato del contenuto. Conoscere la differenza tra elementi di blocco e inline è fondamentale.",
         punti: [
-          "<header> - Intestazione della pagina o di una sezione",
-          "<nav> - Menu di navigazione",
-          "<main> - Contenuto principale della pagina",
-          "<article> - Contenuto autonomo e riutilizzabile",
-          "<section> - Sezione tematica del documento",
-          "<aside> - Contenuto correlato ma separato",
-          "<footer> - Piè di pagina"
+          "Tag: Istruzioni racchiuse tra parentesi angolari (es. <h1>)",
+          "Attributi: Informazioni aggiuntive nei tag di apertura (es. class=\"...\", href=\"...\")",
+          "Elementi di Blocco: Occupano l'intera larghezza (es. <div>, <p>, <h1>-<h6>)",
+          "Elementi Inline: Occupano solo lo spazio necessario (es. <span>, <a>, <strong>)",
+          "<div> - Contenitore generico (di blocco)",
+          "<span> - Contenitore generico (inline)",
+          "<header> - Contenuto introduttivo (es. logo, navigazione)",
+          "<nav> - Contiene link di navigazione",
+          "<main> - Contenuto principale unico della pagina",
+          "<section> - Raggruppa contenuti tematicamente correlati",
+          "<article> - Contenuto autonomo e indipendente (es. post di blog)",
+          "<footer> - Contenuto finale (es. copyright, contatti)"
         ]
       },
       {
-        titolo: "Form e Input",
-        spiegazione: "I form permettono agli utenti di inviare dati. Ogni input ha un type specifico per validazione.",
+        titolo: "📄 Contenuti Comuni",
+        spiegazione: "Gli elementi più utilizzati per strutturare e presentare il contenuto nelle pagine web.",
         punti: [
-          "<form> con attributi action (dove inviare) e method (GET/POST)",
-          "<input> con type: text, email, password, number, date, checkbox, radio",
-          "<textarea> per testo multi-linea",
-          "<select> e <option> per menu a tendina",
-          "<button> per azioni",
-          "Attributi: required, placeholder, value, name"
+          "<h1> - <h6> - Titoli (dal più importante al meno importante)",
+          "<p> - Paragrafo di testo",
+          "<a> - Link (usa l'attributo href)",
+          "<img> - Immagine (usa gli attributi src e alt)",
+          "<ul> / <ol> / <li> - Liste non ordinate / ordinate / elementi della lista",
+          "<br> - Interruzione di riga",
+          "<strong> / <b> - Testo in grassetto (strong = semantico, b = solo stile)",
+          "<em> / <i> - Testo in corsivo (em = enfasi, i = solo stile)",
+          "<blockquote> - Citazione lunga",
+          "<code> - Codice inline, <pre> - Blocco di codice preformattato"
         ]
       },
       {
-        titolo: "Attributi Globali Importanti",
-        spiegazione: "Attributi utilizzabili su qualsiasi elemento HTML.",
+        titolo: "📥 Form e Input",
+        spiegazione: "I form permettono agli utenti di inviare dati. Ogni input ha un type specifico per validazione e UX migliore.",
+        punti: [
+          "<form> - Contenitore per l'invio dei dati (usa l'attributo action e method)",
+          "<input> - Campo di inserimento dati (usa l'attributo type per definire il tipo: text, password, email, submit, ecc.)",
+          "<label> - Etichetta per un input (collega con for=\"id\" o wrappa l'input)",
+          "<button> - Bottone cliccabile (type=\"submit\", \"button\", \"reset\")",
+          "<textarea> - Campo per testo multi-linea",
+          "<select> / <option> - Menu a tendina",
+          "Attributi importanti: required, placeholder, value, name, id",
+          "Tipi input comuni: text, email, password, number, date, checkbox, radio, file, range"
+        ]
+      },
+      {
+        titolo: "🎯 Attributi Globali Importanti",
+        spiegazione: "Attributi utilizzabili su qualsiasi elemento HTML per identificazione, stile e accessibilità.",
         punti: [
           "id - Identificatore unico per l'elemento",
-          "class - Una o più classi CSS",
+          "class - Una o più classi CSS (separate da spazio)",
           "style - Stili CSS inline",
-          "data-* - Attributi personalizzati per dati",
+          "data-* - Attributi personalizzati per dati (es. data-user-id=\"123\")",
           "title - Tooltip al passaggio del mouse",
-          "aria-* - Attributi per accessibilità"
+          "aria-* - Attributi per accessibilità (es. aria-label, aria-hidden)",
+          "lang - Lingua del contenuto",
+          "tabindex - Ordine di navigazione con Tab"
         ]
       },
       {
-        titolo: "Liste e Tabelle",
-        spiegazione: "Strutture per organizzare dati in modo ordinato.",
+        titolo: "📊 Liste e Tabelle",
+        spiegazione: "Strutture per organizzare dati in modo ordinato e accessibile.",
         punti: [
           "<ul> - Lista non ordinata (pallini)",
-          "<ol> - Lista ordinata (numeri)",
+          "<ol> - Lista ordinata (numeri) - usa type=\"1|a|A|i|I\"",
           "<li> - Elemento di lista",
+          "<dl> / <dt> / <dd> - Lista di definizioni (termine e descrizione)",
           "<table> - Tabella",
           "<thead>, <tbody>, <tfoot> - Sezioni della tabella",
-          "<tr> - Riga, <th> - Intestazione, <td> - Cella"
+          "<tr> - Riga, <th> - Intestazione, <td> - Cella",
+          "colspan / rowspan - Celle che occupano più colonne/righe"
         ]
       }
     ],
@@ -197,94 +228,6 @@ const initialState = [
         frameborder="0" allowfullscreen>
 </iframe>`
       }
-    ],
-    esercizi: [
-      {
-        titolo: "Crea una Landing Page",
-        descrizione: "Costruisci una landing page per un prodotto con header, sezione hero, features e footer",
-        requisiti: [
-          "Header con logo e menu di navigazione",
-          "Sezione hero con titolo accattivante e CTA button",
-          "Sezione features con almeno 3 caratteristiche del prodotto",
-          "Footer con copyright e link social",
-          "Usa tag semantici appropriati"
-        ],
-        suggerimento: "Inizia con la struttura base HTML5, poi aggiungi header, main (con sections per hero e features) e footer"
-      },
-      {
-        titolo: "Form di Contatto Completo",
-        descrizione: "Crea un form di contatto con validazione HTML5",
-        requisiti: [
-          "Campo nome (required)",
-          "Campo email (type email, required)",
-          "Campo telefono (type tel, pattern per validazione)",
-          "Select per scegliere il motivo del contatto",
-          "Textarea per il messaggio (minlength 10)",
-          "Checkbox per privacy policy (required)",
-          "Button di invio"
-        ],
-        suggerimento: "Usa l'attributo 'pattern' per validare il formato del telefono, es: pattern='[0-9]{10}'"
-      },
-      {
-        titolo: "Tabella Orario Settimanale",
-        descrizione: "Crea una tabella per visualizzare un orario scolastico o lavorativo",
-        requisiti: [
-          "7 colonne (una per giorno della settimana)",
-          "Almeno 5 righe (fasce orarie)",
-          "Usa <thead> per le intestazioni dei giorni",
-          "Usa <tbody> per le fasce orarie",
-          "Alcuni eventi possono occupare più celle (usa colspan o rowspan)"
-        ],
-        suggerimento: "L'attributo colspan='2' fa occupare a una cella 2 colonne, rowspan='2' fa occupare 2 righe"
-      },
-      {
-        titolo: "Galleria Immagini",
-        descrizione: "Crea una galleria di immagini con didascalie",
-        requisiti: [
-          "Usa <figure> e <figcaption> per ogni immagine",
-          "Almeno 6 immagini",
-          "Ogni immagine deve avere un alt text descrittivo",
-          "Le immagini devono essere linkabili (wrapped in <a>)"
-        ],
-        suggerimento: "La struttura è: <figure><a><img></a><figcaption>Descrizione</figcaption></figure>"
-      }
-    ],
-    codingTestTips: [
-      {
-        titolo: "Ricorda Sempre il DOCTYPE",
-        contenuto: "Nei coding test, anche se sembra banale, inizia SEMPRE con <!DOCTYPE html>. Molti test automatici verificano questo. È il primo segnale che conosci HTML5.",
-        esempio: "<!DOCTYPE html>\n<html lang='it'>\n<!-- resto del codice -->"
-      },
-      {
-        titolo: "Tag Semantici = Punti Extra",
-        contenuto: "Usa <header>, <nav>, <main>, <article>, <section>, <aside>, <footer> invece di <div> generici. I recruiter lo notano e dimostra che conosci le best practices moderne.",
-        esempio: "<!-- ❌ Male -->\n<div class='header'>\n\n<!-- ✅ Bene -->\n<header>"
-      },
-      {
-        titolo: "Form: name è Fondamentale",
-        contenuto: "Ogni input deve avere un attributo 'name'. È quello che viene inviato al server. Molti dimenticano questo dettaglio nei test.",
-        esempio: "<input type='text' name='username' id='username' required>"
-      },
-      {
-        titolo: "Label e Input: Collega Sempre",
-        contenuto: "Usa il 'for' nel label collegato all'id dell'input. È fondamentale per accessibilità e nei test viene spesso verificato.",
-        esempio: "<label for='email'>Email:</label>\n<input type='email' id='email' name='email'>"
-      },
-      {
-        titolo: "Button type='submit' vs type='button'",
-        contenuto: "In un form, se vuoi inviare i dati usa type='submit' (o non specificare nulla). Usa type='button' solo se il button non deve inviare il form.",
-        esempio: "<!-- Invia il form -->\n<button type='submit'>Invia</button>\n\n<!-- Non invia -->\n<button type='button' onclick='doSomething()'>Azione</button>"
-      },
-      {
-        titolo: "Alt Text per Immagini",
-        contenuto: "L'attributo alt è OBBLIGATORIO per <img>. Descrive l'immagine per screen reader e SEO. Nei test viene quasi sempre verificato.",
-        esempio: "<img src='logo.png' alt='Logo aziendale di TechCorp'>"
-      },
-      {
-        titolo: "Meta Viewport per Responsive",
-        contenuto: "Includi sempre questo meta tag nel <head>. È essenziale per il responsive design e molti test lo richiedono esplicitamente.",
-        esempio: "<meta name='viewport' content='width=device-width, initial-scale=1.0'>"
-      }
     ]
   },
   {
@@ -293,32 +236,60 @@ const initialState = [
     percentuale: "80%",
     concettiChiave: [
       {
-        titolo: "Selettori CSS",
+        titolo: "🏷️ Sintassi e Struttura",
+        spiegazione: "La base di CSS: come è strutturata una regola e come funziona il sistema di applicazione degli stili.",
+        punti: [
+          "Regola CSS: Blocco completo (Selettore + Dichiarazioni)",
+          "Selettore: Parte che identifica gli elementi HTML da stilizzare (es. p, .classe, #id)",
+          "Dichiarazione: Proprietà e Valore (es. color: red;)",
+          "Proprietà: Caratteristica da modificare (es. font-size)",
+          "Valore: Il dato assegnato alla proprietà (es. 16px)",
+          "Cascade (Cascata): L'ordine in cui le regole vengono applicate (ultima regola vince)",
+          "Specificity (Specificità): Il peso di un selettore (ID > Classe > Tag)",
+          "Inheritance (Eredità): Proprietà ereditate dagli elementi genitore (es. color, font-family)"
+        ]
+      },
+      {
+        titolo: "🎯 Selettori Fondamentali",
         spiegazione: "I selettori definiscono quali elementi HTML vengono stilizzati. Conoscerli bene è fondamentale.",
         punti: [
-          "Selettore di tipo: p { } - seleziona tutti i <p>",
-          "Selettore di classe: .nome-classe { } - seleziona elementi con quella classe",
-          "Selettore ID: #id { } - seleziona elemento con quell'ID (unico)",
-          "Selettore universale: * { } - seleziona tutti gli elementi",
-          "Selettori combinati: div p { } (discendente), div > p { } (figlio diretto)",
-          "Pseudo-classi: :hover, :focus, :first-child, :nth-child(n)",
-          "Pseudo-elementi: ::before, ::after, ::first-letter"
+          "Selettore di Tipo: Stilizzi un tag HTML (es. p { ... })",
+          "Selettore di Classe: Stilizzi con un punto (.nome-classe { ... })",
+          "Selettore di ID: Stilizzi con un hashtag (#nome-id { ... })",
+          "Selettore Universale: Seleziona tutto (* { ... })",
+          "Selettore di Figlio: Seleziona figli diretti (div > p { ... })",
+          "Pseudo-classi: Stilizzi elementi in stati specifici (es. :hover, :focus, :first-child)",
+          "Pseudo-elementi: Stilizzi parti specifiche di un elemento (es. ::before, ::after)"
         ]
       },
       {
-        titolo: "Box Model",
+        titolo: "📦 Modello a Scatola e Dimensioni",
         spiegazione: "Ogni elemento HTML è una scatola. Il box model definisce dimensioni e spaziature.",
         punti: [
-          "Content - il contenuto effettivo (testo, immagini)",
-          "Padding - spazio interno tra contenuto e bordo",
-          "Border - bordo della scatola",
-          "Margin - spazio esterno tra elementi",
-          "box-sizing: border-box - include padding e border nella larghezza totale",
-          "Calcolo larghezza totale = width + padding + border + margin"
+          "Box Model: Ogni elemento è una scatola composta da Contenuto, Padding, Border, Margin",
+          "content: Lo spazio in cui risiede il contenuto",
+          "padding: Spazio interno tra contenuto e bordo",
+          "border: Linea che circonda il padding",
+          "margin: Spazio esterno che separa le scatole",
+          "width / height: Dimensioni del contenuto",
+          "box-sizing: border-box;: Regola cruciale; fa sì che padding e border siano inclusi in width/height",
+          "Unità di Misura: px, %, em (relativo al font del genitore), rem (relativo al font radice), vw / vh (percentuale della viewport)"
         ]
       },
       {
-        titolo: "Layout: Flexbox",
+        titolo: "📐 Layout e Posizionamento",
+        spiegazione: "Le proprietà fondamentali per controllare il layout e la posizione degli elementi.",
+        punti: [
+          "display: La proprietà più importante per il layout (valori chiave: block, inline, inline-block, flex, grid)",
+          "position: Determina la posizione (valori chiave: static, relative, absolute, fixed, sticky)",
+          "float: Usato per affiancare elementi (raro oggi, sostituito da Flexbox)",
+          "Flexbox (Layout 1D): display: flex; justify-content (orizzontale), align-items (verticale)",
+          "Grid (Layout 2D): display: grid; grid-template-columns / grid-template-rows definisce la struttura a griglia",
+          "z-index: Definisce l'ordine di impilamento degli elementi posizionati (numeri più alti sopra)"
+        ]
+      },
+      {
+        titolo: "Layout: Flexbox Dettagliato",
         spiegazione: "Sistema di layout unidimensionale (riga o colonna) per distribuire spazio e allineare elementi.",
         punti: [
           "display: flex - attiva flexbox sul contenitore",
@@ -331,7 +302,7 @@ const initialState = [
         ]
       },
       {
-        titolo: "Layout: Grid",
+        titolo: "Layout: Grid Dettagliato",
         spiegazione: "Sistema bidimensionale per layout complessi con righe e colonne.",
         punti: [
           "display: grid - attiva grid",
@@ -344,15 +315,17 @@ const initialState = [
         ]
       },
       {
-        titolo: "Positioning",
-        spiegazione: "Controllo preciso della posizione degli elementi.",
+        titolo: "🎨 Estetica e Tipografia",
+        spiegazione: "Proprietà fondamentali per stilizzare testo, colori e animazioni.",
         punti: [
-          "static - posizionamento normale (default)",
-          "relative - relativo alla posizione normale (può usare top, left)",
-          "absolute - relativo al primo parent positioned (esce dal flusso)",
-          "fixed - relativo al viewport (rimane fisso allo scroll)",
-          "sticky - comportamento misto tra relative e fixed",
-          "z-index - controlla sovrapposizione elementi"
+          "color: Colore del testo",
+          "background-color: Colore dello sfondo",
+          "font-family: Tipo di carattere",
+          "font-size: Dimensione del testo",
+          "text-align: Allineamento del testo (left, center, right)",
+          "opacity: Trasparenza dell'elemento",
+          "transition: Animazione graduale di una proprietà CSS",
+          "@media query: Utilizzato per il Responsive Design (adattare lo stile a diverse dimensioni dello schermo)"
         ]
       },
       {
@@ -365,6 +338,15 @@ const initialState = [
           "rem - relativo alla font-size del root (html)",
           "em - relativo alla font-size del parent",
           "clamp(min, preferito, max) - valore fluido con limiti"
+        ]
+      },
+      {
+        titolo: "➕ Concetti Aggiuntivi Cruciali",
+        spiegazione: "Features moderne di CSS essenziali per codice manutenibile e responsive.",
+        punti: [
+          "Variabili CSS (Custom Properties): Dichiarate con --nome-variabile (es. --colore-primario: blue;), richiamate con var(--nome-variabile). Essenziali per manutenibilità e temi (es. modalità scura)",
+          "Unità Flessibili Viewport: vh (Viewport Height) e vw (Viewport Width) permettono di dimensionare elementi in base alla dimensione dello schermo, rendendoli nativamente responsive (es. width: 50vw è metà della larghezza dello schermo)",
+          "Z-Index: Definisce l'ordine di impilamento degli elementi posizionati (position: absolute/fixed/relative/sticky). Numeri più alti sono sopra elementi con numeri più bassi"
         ]
       }
     ],
@@ -626,122 +608,796 @@ h1, h2, h3 {
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }`
       }
-    ],
-    esercizi: [
-      {
-        titolo: "Card Component Responsive",
-        descrizione: "Crea una card con immagine, titolo, descrizione e button. Deve essere responsive e avere effetti hover.",
-        requisiti: [
-          "Usa flexbox o grid per il layout interno",
-          "Immagine che occupa 100% della larghezza",
-          "Padding uniforme di 20px",
-          "Border radius di 12px",
-          "Box shadow per profondità",
-          "Effetto hover: scale(1.05) e shadow più intenso",
-          "Button centrato con colore di sfondo e hover state"
-        ],
-        suggerimento: "Usa transition: all 0.3s ease per animazioni smooth. Per centrare il button usa margin: 0 auto con display: block"
-      },
-      {
-        titolo: "Navbar Responsive con Hamburger Menu",
-        descrizione: "Crea una navbar che su mobile mostra un hamburger menu, su desktop mostra tutti i link",
-        requisiti: [
-          "Logo a sinistra, menu a destra su desktop",
-          "Flexbox per allineamento",
-          "position: fixed per navbar sempre visibile",
-          "Media query: sotto 768px mostra hamburger icon",
-          "Su mobile, menu verticale che si apre/chiude",
-          "Smooth transition per apertura menu"
-        ],
-        suggerimento: "Usa @media (max-width: 768px) per mobile. Il menu può essere hidden di default e mostrato con una classe .active"
-      },
-      {
-        titolo: "Grid Gallery 3 Colonne Responsive",
-        descrizione: "Crea una galleria di immagini con CSS Grid che si adatta alle dimensioni dello schermo",
-        requisiti: [
-          "3 colonne su desktop (>1024px)",
-          "2 colonne su tablet (768px-1024px)",
-          "1 colonna su mobile (<768px)",
-          "Gap di 20px tra le immagini",
-          "Ogni immagine deve mantenere aspect ratio",
-          "Hover effect sulle immagini (opacity, scale, overlay)"
-        ],
-        suggerimento: "Usa grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) per griglia automatica responsive"
-      },
-      {
-        titolo: "Form Stilizzato",
-        descrizione: "Stili per un form di registrazione moderno e accessibile",
-        requisiti: [
-          "Input con padding, border e border-radius",
-          "Focus state visibile (outline o border colorato)",
-          "Label sopra ogni input",
-          "Placeholder con colore più chiaro",
-          "Button full-width su mobile, auto su desktop",
-          "Error state: input con bordo rosso",
-          "Usa transizioni per effetti smooth"
-        ],
-        suggerimento: "Usa :focus per stile quando input è attivo. :invalid per mostrare errori. Adjacent sibling selector (+) per stilizzare label quando input è focused"
-      },
-      {
-        titolo: "Loading Spinner Animato",
-        descrizione: "Crea uno spinner di caricamento con solo CSS (no immagini)",
-        requisiti: [
-          "Usa @keyframes per animazione rotazione",
-          "Border parziale per effetto spinner",
-          "Animation infinita",
-          "Centrato nella pagina",
-          "Smooth rotation con animation-timing-function"
-        ],
-        suggerimento: "Usa border con colori diversi e border-radius: 50% per cerchio. @keyframes rotate con transform: rotate(360deg). animation: rotate 1s linear infinite"
-      }
-    ],
-    codingTestTips: [
-      {
-        titolo: "box-sizing: border-box è Essenziale",
-        contenuto: "Uno degli errori più comuni è dimenticare box-sizing: border-box. Metti sempre * { box-sizing: border-box; } all'inizio. Rende i calcoli di larghezza molto più semplici.",
-        esempio: "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}"
-      },
-      {
-        titolo: "Flexbox per Centrare",
-        contenuto: "Per centrare elementi verticalmente e orizzontalmente, usa flexbox. È la soluzione più veloce e affidabile nei coding test.",
-        esempio: ".center {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100vh;\n}"
-      },
-      {
-        titolo: "Unità: px vs rem vs %",
-        contenuto: "Usa rem per font-size (scalabile), px per bordi/ombre (precisione), % o vw/vh per larghezze responsive. Nei test, dimostra di conoscere le differenze.",
-        esempio: "/* ✅ Buona pratica */\nhtml { font-size: 16px; }\n.text { font-size: 1rem; }  /* 16px, scalabile */\n.container { width: 90%; }  /* Responsive */"
-      },
-      {
-        titolo: "Mobile-First Media Queries",
-        contenuto: "Inizia con stili per mobile, poi aggiungi @media (min-width: ...) per desktop. È più semplice e moderno rispetto a max-width.",
-        esempio: "/* Base: mobile */\n.grid { grid-template-columns: 1fr; }\n\n/* Desktop */\n@media (min-width: 768px) {\n  .grid { grid-template-columns: repeat(3, 1fr); }\n}"
-      },
-      {
-        titolo: "Transition vs Animation",
-        contenuto: "Usa transition per cambiamenti semplici (hover, focus). Usa @keyframes e animation per sequenze complesse. Non confonderli nei test!",
-        esempio: "/* Transition: semplice */\n.btn { transition: all 0.3s; }\n.btn:hover { transform: scale(1.1); }\n\n/* Animation: complessa */\n@keyframes pulse {\n  0%, 100% { opacity: 1; }\n  50% { opacity: 0.5; }\n}\n.pulse { animation: pulse 2s infinite; }"
-      },
-      {
-        titolo: "Specificity e !important",
-        contenuto: "Evita !important il più possibile. Dimostra che conosci la specificità: inline styles > ID > classe > tag. Nei test, usa classi per tutto.",
-        esempio: "/* ❌ Male */\n.text { color: blue !important; }\n\n/* ✅ Bene - aumenta specificità */\n.container .text { color: blue; }"
-      },
-      {
-        titolo: "Flexbox: justify vs align",
-        contenuto: "Confondere justify-content e align-items è comune. Ricorda: justify è per l'asse principale (direction), align per l'asse trasversale.",
-        esempio: "/* flex-direction: row (default) */\n.flex {\n  display: flex;\n  justify-content: center;  /* orizzontale */\n  align-items: center;      /* verticale */\n}\n\n/* flex-direction: column */\n.flex-col {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;  /* verticale */\n  align-items: center;      /* orizzontale */\n}"
-      }
     ]
   },
   {
     nome: "JavaScript",
     descrizione: "Competenza avanzata, con piena padronanza delle funzionalità ES6+ per codice pulito e performante.",
     percentuale: "90%",
+    concettiChiave: [
+      {
+        titolo: "📊 Variabili e Tipi di Dati",
+        spiegazione: "Fondamenta di JavaScript: come dichiarare variabili e i tipi di dati disponibili.",
+        punti: [
+          "Dichiarazione: Parole chiave let (riassegnabile) e const (costante, preferita). Evitare var",
+          "Tipi Primitivi: string, number, boolean, null, undefined, symbol, bigint",
+          "Tipi Riferimento: object (include Array e Function)",
+          "Tipizzazione: JS è a tipizzazione debole e dinamica",
+          "Coercizione: Conversione automatica di un tipo in un altro (attenzione a ==)",
+          "Strict Equality: === (confronta valore E tipo, sempre preferito)",
+          "Hoisting: Le dichiarazioni function sono hoisted (puoi chiamarle prima che siano definite). let e const NON sono hoisted e causano errore se usate prima della dichiarazione"
+        ]
+      },
+      {
+        titolo: "🔄 Strutture Logiche e Cicli",
+        spiegazione: "Controllo del flusso del programma: condizionali e iterazioni.",
+        punti: [
+          "Condizionali: Struttura if / else if / else e switch",
+          "Ternario: Sintassi compatta per condizionali semplici: condizione ? vero : falso",
+          "Ciclo for classico: Per iterare con un contatore",
+          "Ciclo for...of: Per iterare gli elementi di Array",
+          "Ciclo for...in: Per iterare le proprietà di Oggetti",
+          "break / continue: Controllare il flusso all'interno dei cicli"
+        ]
+      },
+      {
+        titolo: "⚙️ Funzioni e Scope",
+        spiegazione: "Come definire funzioni e comprendere la visibilità delle variabili.",
+        punti: [
+          "Funzione Dichiarata: Sintassi standard: function nomeFunzione() {}",
+          "Arrow Function: Sintassi compatta, essenziale nel codice moderno/React: const nome = () => {}",
+          "return: Valore restituito dalla funzione",
+          "Scope (Ambito): Regole di visibilità delle variabili (let / const sono block-scoped, visibili solo nel blocco di codice)",
+          "Closure: Una funzione ricorda il suo ambiente esterno anche quando è eseguita altrove",
+          "this in regular function: dipende da come è chiamata",
+          "this in arrow function: ereditato dallo scope esterno"
+        ]
+      },
+      {
+        titolo: "📦 Strutture Dati Complesse",
+        spiegazione: "Array e Oggetti: come manipolarli e accedere ai loro dati.",
+        punti: [
+          "Array: Liste indicizzate di valori",
+          "Metodi Chiave: .push(), .pop(), .slice(), .splice()",
+          "Metodi Funzionali (cruciali): .map(), .filter(), .reduce(), .forEach()",
+          "Oggetti: Coppie chiave-valore",
+          "Accesso: Con dot notation (obj.prop) o bracket notation (obj['prop'])",
+          "Destructuring: Sintassi per estrarre valori da Array/Oggetti in variabili separate",
+          "Spread Operator: Sintassi ... per espandere Array o Oggetti (utilissimo per copiarli)"
+        ]
+      },
+      {
+        titolo: "Array Methods Essenziali",
+        spiegazione: "I metodi degli array sono fondamentali per manipolare dati. Conoscerli bene è essenziale.",
+        punti: [
+          "map() - trasforma ogni elemento, ritorna nuovo array",
+          "filter() - filtra elementi che passano un test, ritorna nuovo array",
+          "reduce() - riduce array a un singolo valore",
+          "find() - trova primo elemento che passa test",
+          "forEach() - esegue funzione per ogni elemento (non ritorna nulla)",
+          "some() / every() - verifica se almeno uno/tutti passano test (boolean)",
+          "slice() - copia porzione array, splice() - modifica array originale"
+        ]
+      },
+      {
+        titolo: "Destructuring e Spread",
+        spiegazione: "Sintassi moderna per estrarre valori da oggetti/array e copiare/spreadare valori.",
+        punti: [
+          "Destructuring array: const [a, b] = [1, 2]",
+          "Destructuring oggetto: const {name, age} = person",
+          "Default values: const {name = 'Guest'} = user",
+          "Rest operator: const [first, ...rest] = array",
+          "Spread operator: [...array1, ...array2] per copiare/merge",
+          "Spread in oggetti: {...obj1, ...obj2} per merge oggetti"
+        ]
+      },
+      {
+        titolo: "⏳ Asincronicità (API e Promises)",
+        spiegazione: "Gestione di operazioni asincrone: come gestire chiamate API e operazioni non bloccanti.",
+        punti: [
+          "Asincronicità: Operazioni che non bloccano il thread principale (es. chiamate API)",
+          "Callback: Funzioni passate come argomenti, eseguite dopo l'operazione",
+          "Promise: Oggetto per gestire il risultato di un'operazione asincrona (Stati: Pending, Fulfilled, Rejected)",
+          "Sintassi: .then() (successo) e .catch() (errore)",
+          "async / await: Sintassi moderna per gestire le Promise in modo più leggibile (sembrano sincrone)",
+          "Regola: await può essere usato solo all'interno di una funzione dichiarata async",
+          "Promise.all() - aspetta tutte le promises, Promise.race() - ritorna la prima che si risolve"
+        ]
+      },
+      {
+        titolo: "🧩 Programmazione Orientata agli Oggetti (OOP)",
+        spiegazione: "Sintassi ES6+ per creare classi e gestire l'ereditarietà in JavaScript.",
+        punti: [
+          "Classi: La sintassi base per definire i 'blueprint' degli oggetti (introdotti con ES6). Sintassi: class NomeClasse {}",
+          "constructor: Metodo speciale per inizializzare le proprietà dell'oggetto quando viene creato",
+          "this: Riferimento all'oggetto corrente all'interno di un metodo o costruttore",
+          "Ereditarietà: Estendere una classe esistente. Sintassi: class Figlio extends Genitore {}",
+          "super(): Usato all'interno del costruttore di una sottoclasse per chiamare il costruttore del genitore"
+        ]
+      },
+      {
+        titolo: "📦 Moduli (Organizzazione del Codice)",
+        spiegazione: "Come organizzare il codice in file separati e importare/esportare funzionalità.",
+        punti: [
+          "import: Sintassi per includere codice esportato da un altro file (cruciale in React/Node.js)",
+          "Sintassi (Named): import { funzione } from './file.js'",
+          "Sintassi (Default): import NomeDefault from './file.js'",
+          "export: Sintassi per rendere funzioni, classi o variabili disponibili per l'uso in altri file",
+          "Sintassi (Named): export const miaVariabile = 10",
+          "Sintassi (Default): export default function()"
+        ]
+      },
+      {
+        titolo: "🚀 Funzionalità Avanzate",
+        spiegazione: "Features moderne di ES6+ per scrivere codice più pulito e potente.",
+        punti: [
+          "Template Literals (Backticks): Stringhe che supportano interpolazione e multi-linea. Sintassi: `Ciao ${variabile}`",
+          "Rest Parameters: Raccogliere un numero indefinito di argomenti di una funzione in un array. Sintassi: function somma(...numeri) {}",
+          "Optional Chaining: Modo sicuro per accedere a proprietà annidate senza far crashare il programma se una proprietà è null o undefined. Sintassi: oggetto?.proprieta?.sottoproprieta",
+          "Destructuring: Sintassi per estrarre valori da Array/Oggetti in variabili separate",
+          "Spread Operator: Sintassi ... per espandere Array o Oggetti (utilissimo per copiarli)"
+        ]
+      },
+      {
+        titolo: "🔒 Immutabilità",
+        spiegazione: "Principio fondamentale in React e programmazione funzionale: non modificare lo stato originale.",
+        punti: [
+          "Immutabilità: Il principio di non modificare lo stato originale. Essenziale in React e nella programmazione funzionale",
+          "Quando lavori con Array/Oggetti, usa lo Spread Operator (...) o metodi come .map()/.filter() per creare una nuova copia e modificarla, invece di modificare l'originale",
+          "Esempio di Immutabilità: Non array.push(nuovoElemento), ma const nuovoArray = [...array, nuovoElemento]",
+          "Benefici: Prevedibilità, debugging più facile, ottimizzazioni in React"
+        ]
+      },
+      {
+        titolo: "Closures e Higher-Order Functions",
+        spiegazione: "Le closures permettono alle funzioni di accedere a variabili dello scope esterno anche dopo che è chiuso.",
+        punti: [
+          "Closure: funzione che ha accesso a variabili dello scope esterno",
+          "Higher-order function: funzione che prende/ritorna altre funzioni",
+          "Esempio: function outer() { const x = 1; return function inner() { return x; } }",
+          "Usate per: data privacy, function factories, event handlers",
+          "Attenzione a loop con closures (problema classico con var)"
+        ]
+      },
+      {
+        titolo: "this e Binding",
+        spiegazione: "'this' in JavaScript è determinato da come viene chiamata la funzione, non da dove è definita.",
+        punti: [
+          "this in regular function: dipende da come è chiamata",
+          "this in arrow function: ereditato dallo scope esterno",
+          "bind() - crea nuova funzione con this fissato",
+          "call() / apply() - chiama funzione con this specificato",
+          "this in oggetti: punta all'oggetto che chiama il metodo",
+          "this in event handlers: punta all'elemento che ha scatenato l'evento"
+        ]
+      },
+      {
+        titolo: "🛡️ Error Handling (Gestione Errori)",
+        spiegazione: "Come gestire gli errori in JavaScript: fondamentale per codice robusto e per gestire operazioni asincrone.",
+        punti: [
+          "try/catch/finally: Blocchi per gestire errori. try esegue il codice, catch cattura errori, finally esegue sempre",
+          "throw: Lancia un errore personalizzato. Sintassi: throw new Error('messaggio')",
+          "Error objects: Error, TypeError, ReferenceError, SyntaxError - tipi di errori predefiniti",
+          "try/catch con async/await: Essenziale per gestire errori nelle Promise",
+          "Promise.catch(): Metodo alternativo per gestire errori nelle Promise",
+          "Best practice: Sempre gestire errori nelle operazioni asincrone e validare input"
+        ]
+      },
+      {
+        titolo: "✅ Truthy/Falsy Values",
+        spiegazione: "Valori che vengono valutati come true o false nei contesti booleani. Fondamentale per capire i condizionali.",
+        punti: [
+          "Falsy values: false, 0, '' (stringa vuota), null, undefined, NaN - valutati come false",
+          "Truthy values: Tutto il resto è truthy (oggetti, array non vuoti, stringhe non vuote, numeri diversi da 0)",
+          "Uso nei condizionali: if (value) controlla se value è truthy",
+          "Pattern comune: if (array.length) controlla se l'array non è vuoto",
+          "Attenzione: [] e {} sono truthy anche se vuoti! Usa .length o Object.keys().length per verificare",
+          "Doppia negazione: !!value converte un valore in boolean esplicito"
+        ]
+      },
+      {
+        titolo: "🔍 Typeof e Instanceof",
+        spiegazione: "Operatori per verificare i tipi di dati e le istanze di classi. Utili per type checking e debugging.",
+        punti: [
+          "typeof: Verifica il tipo di un valore primitivo. Ritorna stringa: 'string', 'number', 'boolean', 'undefined', 'object', 'function', 'symbol', 'bigint'",
+          "typeof limitazioni: typeof null ritorna 'object' (bug storico), typeof array ritorna 'object'",
+          "instanceof: Verifica se un oggetto è un'istanza di una classe. Sintassi: obj instanceof ClassName",
+          "Array.isArray(): Metodo specifico per verificare se un valore è un array (più affidabile di typeof)",
+          "Uso pratico: Type checking prima di operazioni, validazione input, debugging",
+          "Pattern: typeof value === 'string' && value.length > 0"
+        ]
+      },
+      {
+        titolo: "📄 JSON (JavaScript Object Notation)",
+        spiegazione: "Formato standard per scambiare dati. Essenziale per comunicare con API e salvare dati.",
+        punti: [
+          "JSON.parse(): Converte una stringa JSON in un oggetto JavaScript. Sintassi: JSON.parse(jsonString)",
+          "JSON.stringify(): Converte un oggetto JavaScript in una stringa JSON. Sintassi: JSON.stringify(obj)",
+          "Uso comune: Comunicazione con API REST, salvare dati in localStorage, trasferire dati tra client e server",
+          "Limitazioni: JSON non supporta funzioni, undefined, Symbol, Date (vengono convertiti o omessi)",
+          "Secondo parametro: JSON.stringify(obj, null, 2) formatta con indentazione per leggibilità",
+          "Error handling: Sempre usare try/catch con JSON.parse() perché può lanciare errori con stringhe malformate"
+        ]
+      },
+      {
+        titolo: "⚡ Logical Operators (Short-Circuit Evaluation)",
+        spiegazione: "Gli operatori logici && e || non ritornano solo boolean, ma utilizzano short-circuit evaluation per ottimizzare.",
+        punti: [
+          "&& (AND): Ritorna il primo valore falsy o l'ultimo valore se tutti sono truthy. Si ferma al primo falsy",
+          "|| (OR): Ritorna il primo valore truthy o l'ultimo valore se tutti sono falsy. Si ferma al primo truthy",
+          "Pattern comune: value || defaultValue - assegna un valore di default se value è falsy",
+          "Pattern comune: obj && obj.property - accede a proprietà solo se obj esiste (evita errori)",
+          "Pattern moderno: obj?.property (Optional Chaining) è preferibile a obj && obj.property",
+          "Esempio: const name = user.name || 'Guest' - assegna 'Guest' se user.name è falsy"
+        ]
+      }
+    ],
+    esempiCodice: [
+      {
+        titolo: "Array Methods in Azione",
+        descrizione: "Esempi pratici dei metodi array più usati",
+        codice: `// map - trasforma ogni elemento
+const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(n => n * 2);
+// [2, 4, 6, 8]
+
+// filter - filtra elementi
+const evens = numbers.filter(n => n % 2 === 0);
+// [2, 4]
+
+// reduce - riduce a un valore
+const sum = numbers.reduce((acc, n) => acc + n, 0);
+// 10
+
+// find - trova primo elemento
+const found = numbers.find(n => n > 2);
+// 3
+
+// some / every - verifica condizioni
+const hasEven = numbers.some(n => n % 2 === 0); // true
+const allEven = numbers.every(n => n % 2 === 0); // false`
+      },
+      {
+        titolo: "Destructuring e Spread",
+        descrizione: "Sintassi moderna per lavorare con oggetti e array",
+        codice: `// Destructuring array
+const [first, second, ...rest] = [1, 2, 3, 4, 5];
+// first = 1, second = 2, rest = [3, 4, 5]
+
+// Destructuring oggetto
+const person = { name: 'Mario', age: 30, city: 'Roma' };
+const { name, age } = person;
+// name = 'Mario', age = 30
+
+// Con default values
+const { name = 'Guest', role = 'user' } = user;
+
+// Spread operator - copia array
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5]; // [1, 2, 3, 4, 5]
+
+// Spread in oggetti - merge
+const obj1 = { a: 1, b: 2 };
+const obj2 = { ...obj1, c: 3 }; // { a: 1, b: 2, c: 3 }`
+      },
+      {
+        titolo: "Async/Await Pattern",
+        descrizione: "Gestione asincrona moderna e leggibile",
+        codice: `// Con async/await
+async function fetchUserData(userId) {
+  try {
+    const response = await fetch(\`/api/users/\${userId}\`);
+    const user = await response.json();
+    return user;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+}
+
+// Promise.all - eseguire più async in parallelo
+async function fetchMultipleUsers(ids) {
+  const promises = ids.map(id => fetchUserData(id));
+  const users = await Promise.all(promises);
+  return users;
+}
+
+// Promise.race - prima che si risolve
+async function fetchWithTimeout(url, timeout) {
+  const fetchPromise = fetch(url);
+  const timeoutPromise = new Promise((_, reject) => 
+    setTimeout(() => reject(new Error('Timeout')), timeout)
+  );
+  return Promise.race([fetchPromise, timeoutPromise]);
+}`
+      },
+      {
+        titolo: "Closures e Function Factories",
+        descrizione: "Esempi pratici di closures",
+        codice: `// Closure semplice
+function outer() {
+  const x = 10;
+  return function inner() {
+    return x; // ha accesso a x anche dopo che outer() è finita
+  };
+}
+
+const getX = outer();
+console.log(getX()); // 10
+
+// Function factory
+function createCounter() {
+  let count = 0;
+  return {
+    increment: () => ++count,
+    decrement: () => --count,
+    getCount: () => count
+  };
+}
+
+const counter = createCounter();
+counter.increment(); // 1
+counter.increment(); // 2
+counter.getCount(); // 2
+
+// Fix problema loop con closures
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 100); // 0, 1, 2 (con let)
+}
+
+// Con var sarebbe: 3, 3, 3`
+      },
+      {
+        titolo: "Arrow Functions vs Regular Functions",
+        descrizione: "Quando usare quale",
+        codice: `// Arrow function - this legato al contesto esterno
+const obj = {
+  name: 'Test',
+  regular: function() {
+    console.log(this.name); // 'Test' - this = obj
+  },
+  arrow: () => {
+    console.log(this.name); // undefined - this = window/global
+  }
+};
+
+// Arrow per callbacks
+const numbers = [1, 2, 3];
+const doubled = numbers.map(n => n * 2);
+
+// Regular quando serve this dinamico
+const button = document.querySelector('button');
+button.addEventListener('click', function() {
+  console.log(this); // button element
+});
+
+// Arrow non può essere constructor
+const Person = (name) => {
+  this.name = name; // Error!
+};
+
+// Regular può essere constructor
+function Person(name) {
+  this.name = name;
+}
+const p = new Person('Mario');`
+      },
+      {
+        titolo: "Template Literals e String Methods",
+        descrizione: "Sintassi moderna per stringhe",
+        codice: `// Template literals
+const name = 'Mario';
+const age = 30;
+const message = \`Ciao, sono \${name} e ho \${age} anni\`;
+
+// Multi-line strings
+const html = \`
+  <div>
+    <h1>Title</h1>
+    <p>Content</p>
+  </div>
+\`;
+
+// Tagged templates
+function highlight(strings, ...values) {
+  return strings.reduce((result, str, i) => 
+    result + str + (values[i] ? \`<mark>\${values[i]}</mark>\` : ''),
+    ''
+  );
+}
+
+const name = 'Mario';
+highlight\`Hello \${name}!\`; // "Hello <mark>Mario</mark>!"
+
+// String methods
+const str = 'Hello World';
+str.includes('World'); // true
+str.startsWith('Hello'); // true
+str.endsWith('World'); // true
+str.repeat(3); // 'Hello WorldHello WorldHello World'`
+      },
+      {
+        titolo: "Object Methods e Computed Properties",
+        descrizione: "Metodi moderni per lavorare con oggetti",
+        codice: `// Object.keys, values, entries
+const obj = { a: 1, b: 2, c: 3 };
+Object.keys(obj); // ['a', 'b', 'c']
+Object.values(obj); // [1, 2, 3]
+Object.entries(obj); // [['a', 1], ['b', 2], ['c', 3]]
+
+// Object.assign e spread
+const obj1 = { a: 1 };
+const obj2 = { b: 2 };
+const merged = Object.assign({}, obj1, obj2); // { a: 1, b: 2 }
+// o con spread:
+const merged2 = { ...obj1, ...obj2 };
+
+// Computed property names
+const key = 'name';
+const obj = {
+  [key]: 'Mario', // obj.name = 'Mario'
+  ['age']: 30
+};
+
+// Method shorthand
+const obj = {
+  // vecchio modo
+  oldMethod: function() { return 'old'; },
+  // nuovo modo
+  newMethod() { return 'new'; }
+};`
+      }
+    ]
   },
   {
     nome: "PHP",
     descrizione: "Sviluppo backend robusto.",
     percentuale: "80%",
+    concettiChiave: [
+      {
+        titolo: "🏷️ Struttura Base e Variabili",
+        spiegazione: "Fondamenta di PHP: sintassi base, variabili e output.",
+        punti: [
+          "Tag di Apertura/Chiusura: Il codice PHP deve essere racchiuso tra <?php e ?>",
+          "Terminatore: Tutte le istruzioni PHP terminano con il punto e virgola (;)",
+          "Variabili: Le variabili iniziano sempre con il simbolo del dollaro ($). Esempio: $nome_variabile = 'valore'",
+          "Output: Per stampare un valore a schermo: echo (o print)",
+          "Commenti: // (riga singola) o /* ... */ (multilinea)",
+          "Concatenazione: Utilizza il punto (.) per unire stringhe (NON il + come in JS)",
+          "Tipi: PHP è a tipizzazione debole, ma supporta dichiarazioni di tipo esplicite (es. string, int, array)"
+        ]
+      },
+      {
+        titolo: "🔄 Strutture Dati e Cicli",
+        spiegazione: "Array e iterazioni: come gestire collezioni di dati in PHP.",
+        punti: [
+          "Array Indicizzati (Numerici): Simili a quelli in JS. Sintassi: $array = [1, 2, 3]",
+          "Array Associativi (Oggetti/Mappe): Usano chiavi nominali invece di indici numerici. Sintassi: $persona = ['nome' => 'Mario', 'età' => 30]",
+          "Accesso: $persona['nome'] per accedere agli array associativi",
+          "Ciclo for classico: Uguale al JS per iterare con un contatore",
+          "Ciclo foreach (Essenziale): Per iterare Array. Sintassi 1 (Solo valore): foreach ($array as $valore) { ... }",
+          "Ciclo foreach Sintassi 2 (Chiave e valore): foreach ($array as $chiave => $valore) { ... }",
+          "Condizionali: Uguali a JS (if / else if / else, switch)"
+        ]
+      },
+      {
+        titolo: "⚙️ Funzioni e Scope",
+        spiegazione: "Come definire funzioni e comprendere la visibilità delle variabili in PHP.",
+        punti: [
+          "Dichiarazione Funzione: Sintassi standard: function nomeFunzione($parametro) { ... return $risultato; }",
+          "Valori di Default: Dichiarati nell'argomento della funzione (es. function saluta($nome = 'Ospite'))",
+          "Variabili Globali: Le variabili definite fuori da una funzione non sono accessibili dentro senza usare la parola chiave global (da usare con cautela)",
+          "Passaggio per Riferimento: È possibile passare un parametro per riferimento usando & (es. function modifica(&$valore))",
+          "return: Valore restituito dalla funzione"
+        ]
+      },
+      {
+        titolo: "📦 Programmazione Orientata agli Oggetti (OOP)",
+        spiegazione: "Sintassi per creare classi, oggetti e gestire l'ereditarietà in PHP.",
+        punti: [
+          "Classe: Definizione di un oggetto. Sintassi: class NomeClasse { ... }",
+          "Oggetto/Istanziamento: Creazione di un oggetto: $oggetto = new NomeClasse()",
+          "Accesso ai Metodi/Proprietà: Usa l'operatore freccia (->) o operatore di accesso agli oggetti: $oggetto->metodo()",
+          "Proprietà/Metodi: Accessibilità definita da public, protected, private",
+          "$this->: Riferimento all'istanza corrente della classe",
+          "Ereditarietà: class Figlio extends Genitore { ... }"
+        ]
+      },
+      {
+        titolo: "💾 PHP Backend e File",
+        spiegazione: "Concetti fondamentali per lo sviluppo backend: inclusione file e variabili superglobali.",
+        punti: [
+          "Inclusione File: include 'file.php'; o require 'file.php'; (La versione _once impedisce inclusioni multiple)",
+          "Variabili Superglobali (CRUCIALI): Array associativi speciali accessibili ovunque",
+          "$_GET: Dati passati tramite URL (query string)",
+          "$_POST: Dati inviati tramite form (metodo POST)",
+          "$_SESSION: Dati persistenti tra le pagine per un utente",
+          "Altre superglobali: $_SERVER, $_COOKIE, $_FILES, $_REQUEST"
+        ]
+      },
+      {
+        titolo: "📦 Namespace (Spazi dei Nomi)",
+        spiegazione: "Strumento per organizzare le classi e prevenire conflitti di nome tra librerie diverse (essenziale in Laravel).",
+        punti: [
+          "Concetto: Organizza le classi e previene conflitti di nome tra librerie diverse",
+          "Sintassi (Definizione): namespace App\\Http\\Controllers; (dichiarato all'inizio del file)",
+          "Sintassi (Uso): use App\\Modelli\\Utente; (per importare una classe da un altro namespace e usarla direttamente)",
+          "Essenziale in Laravel: Ogni classe ha il suo namespace per organizzazione",
+          "Backslash (\\\\): Separatore per i namespace in PHP"
+        ]
+      },
+      {
+        titolo: "⚙️ Metodi Statici",
+        spiegazione: "Metodi o proprietà che appartengono alla classe stessa, non all'istanza specifica dell'oggetto.",
+        punti: [
+          "Concetto: Metodi o proprietà che appartengono alla classe stessa, non all'istanza specifica dell'oggetto. Non richiedono l'uso di new",
+          "Dichiarazione: public static function nomeMetodo() {}",
+          "Uso: Accesso diretto tramite l'operatore di risoluzione dell'ambito (doppio due punti): NomeClasse::nomeMetodo()",
+          "Esempio in Laravel: Route::get(...) - Route è una classe con metodi statici",
+          "Vantaggi: Non serve istanziare la classe, accesso diretto ai metodi"
+        ]
+      },
+      {
+        titolo: "🛑 Gestione delle Eccezioni",
+        spiegazione: "Il modo formale per gestire gli errori gravi che interrompono l'esecuzione del codice (cruciale per il debugging).",
+        punti: [
+          "Concetto: Il modo formale per gestire gli errori gravi che interrompono l'esecuzione del codice (cruciale per il debugging)",
+          "Sintassi: Si usa il blocco try...catch (molto simile a JavaScript)",
+          "try: Contiene il codice che potrebbe generare un errore",
+          "catch (Exception $e): Cattura l'oggetto Exception e permette di gestirlo",
+          "$e->getMessage(): Metodo per ottenere il messaggio di errore",
+          "Best practice: Sempre gestire eccezioni nelle operazioni critiche (database, file, API)"
+        ]
+      }
+    ],
+    esempiCodice: [
+      {
+        titolo: "Struttura Base e Variabili",
+        descrizione: "Sintassi fondamentale di PHP",
+        codice: `<?php
+// Variabili
+$nome = "Mario";
+$eta = 30;
+$attivo = true;
+
+// Output
+echo "Ciao, sono " . $nome; // Concatenazione con punto
+print "Ho " . $eta . " anni";
+
+// Commenti
+// Questo è un commento su una riga
+/* Questo è un 
+   commento multilinea */
+
+// Tipizzazione esplicita (PHP 7+)
+function saluta(string $nome): string {
+    return "Ciao " . $nome;
+}`
+      },
+      {
+        titolo: "Array e Foreach",
+        descrizione: "Gestione di array indicizzati e associativi",
+        codice: `<?php
+// Array indicizzato
+$numeri = [1, 2, 3, 4, 5];
+
+// Array associativo
+$persona = [
+    'nome' => 'Mario',
+    'eta' => 30,
+    'citta' => 'Roma'
+];
+
+// Accesso
+echo $persona['nome']; // Mario
+
+// Foreach - solo valori
+foreach ($numeri as $numero) {
+    echo $numero . " ";
+}
+
+// Foreach - chiave e valore
+foreach ($persona as $chiave => $valore) {
+    echo $chiave . ": " . $valore . "\\n";
+}`
+      },
+      {
+        titolo: "Funzioni e Scope",
+        descrizione: "Definizione di funzioni con parametri e valori di default",
+        codice: `<?php
+// Funzione base
+function saluta($nome) {
+    return "Ciao " . $nome;
+}
+
+// Valore di default
+function salutaDefault($nome = 'Ospite') {
+    return "Ciao " . $nome;
+}
+
+// Passaggio per riferimento
+function incrementa(&$valore) {
+    $valore++;
+}
+
+$numero = 5;
+incrementa($numero);
+echo $numero; // 6
+
+// Variabile globale (da usare con cautela)
+$globale = "Sono globale";
+
+function mostraGlobale() {
+    global $globale;
+    echo $globale;
+}`
+      },
+      {
+        titolo: "OOP - Classi e Oggetti",
+        descrizione: "Creazione di classi, oggetti e uso dell'ereditarietà",
+        codice: `<?php
+// Definizione classe
+class Persona {
+    public $nome;
+    private $eta;
+    
+    public function __construct($nome, $eta) {
+        $this->nome = $nome;
+        $this->eta = $eta;
+    }
+    
+    public function saluta() {
+        return "Ciao, sono " . $this->nome;
+    }
+    
+    public function getEta() {
+        return $this->eta;
+    }
+}
+
+// Istanziazione
+$persona = new Persona("Mario", 30);
+
+// Accesso a metodi e proprietà
+echo $persona->saluta();
+echo $persona->nome; // public
+// echo $persona->eta; // ERRORE - private
+
+// Ereditarietà
+class Studente extends Persona {
+    public $scuola;
+    
+    public function __construct($nome, $eta, $scuola) {
+        parent::__construct($nome, $eta);
+        $this->scuola = $scuola;
+    }
+}`
+      },
+      {
+        titolo: "Variabili Superglobali",
+        descrizione: "Uso delle variabili superglobali per gestire dati HTTP",
+        codice: `<?php
+// $_GET - dati da URL
+// URL: pagina.php?nome=Mario&eta=30
+$nome = $_GET['nome'] ?? 'Ospite'; // ?? operatore null coalescing
+$eta = $_GET['eta'] ?? 0;
+
+// $_POST - dati da form POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
+}
+
+// $_SESSION - dati persistenti
+session_start();
+$_SESSION['utente_id'] = 123;
+$_SESSION['nome'] = 'Mario';
+
+// Accesso in altre pagine
+$utenteId = $_SESSION['utente_id'] ?? null;
+
+// $_SERVER - informazioni sul server
+$metodo = $_SERVER['REQUEST_METHOD'];
+$uri = $_SERVER['REQUEST_URI'];`
+      },
+      {
+        titolo: "Namespace e Use",
+        descrizione: "Organizzazione del codice con namespace",
+        codice: `<?php
+// File: App/Http/Controllers/UserController.php
+namespace App\\Http\\Controllers;
+
+use App\\Models\\User;
+use App\\Services\\EmailService;
+
+class UserController {
+    public function index() {
+        $users = User::all();
+        return $users;
+    }
+    
+    public function sendEmail() {
+        $emailService = new EmailService();
+        $emailService->send();
+    }
+}
+
+// File: App/Models/User.php
+namespace App\\Models;
+
+class User {
+    // ...
+}`
+      },
+      {
+        titolo: "Metodi Statici",
+        descrizione: "Definizione e uso di metodi statici",
+        codice: `<?php
+class Utility {
+    public static function formattaData($data) {
+        return date('d/m/Y', strtotime($data));
+    }
+    
+    public static function generaToken() {
+        return bin2hex(random_bytes(32));
+    }
+}
+
+// Uso senza istanziare
+$dataFormattata = Utility::formattaData('2024-01-15');
+$token = Utility::generaToken();
+
+// Esempio Laravel-style
+class Route {
+    public static function get($uri, $callback) {
+        // Logica routing
+    }
+    
+    public static function post($uri, $callback) {
+        // Logica routing
+    }
+}
+
+Route::get('/users', function() {
+    return 'Lista utenti';
+});`
+      },
+      {
+        titolo: "Gestione Eccezioni",
+        descrizione: "Uso di try/catch per gestire errori",
+        codice: `<?php
+// Gestione base
+try {
+    $risultato = 10 / 0; // Genera errore
+} catch (Exception $e) {
+    echo "Errore catturato: " . $e->getMessage();
+}
+
+// Esempio pratico - database
+try {
+    $pdo = new PDO("mysql:host=localhost;dbname=test", $user, $pass);
+    $stmt = $pdo->query("SELECT * FROM users");
+    $users = $stmt->fetchAll();
+} catch (PDOException $e) {
+    echo "Errore database: " . $e->getMessage();
+    // Log dell'errore
+    error_log($e->getMessage());
+}
+
+// Eccezioni personalizzate
+class CustomException extends Exception {
+    public function errorMessage() {
+        return "Errore personalizzato: " . $this->getMessage();
+    }
+}
+
+try {
+    throw new CustomException("Qualcosa è andato storto");
+} catch (CustomException $e) {
+    echo $e->errorMessage();
+}`
+      }
+    ]
   },
   {
     nome: "Python",

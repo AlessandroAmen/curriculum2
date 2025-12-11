@@ -1,17 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import Navskill from '../components/Navskill';
+import { useTranslation } from '../hooks/useTranslation';
+import { translateSkill } from '../data/helpers/translateSkill';
 import './skill.css';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const Skill = () => {
-  const languages = useSelector(state => state.languages);
+  const languagesRaw = useSelector(state => state.languages);
   const navigate = useNavigate();
+  const { t, currentLanguage } = useTranslation();
   const [animatedPercentages, setAnimatedPercentages] = useState({});
+  
+  // Traduci le skills in base alla lingua corrente
+  const languages = useMemo(() => {
+    return languagesRaw.map(skill => translateSkill(skill, currentLanguage));
+  }, [languagesRaw, currentLanguage]);
 
   useEffect(() => {
     // Animazione delle barre di progresso
@@ -33,7 +41,7 @@ const Skill = () => {
     labels,
     datasets: [
       {
-        label: 'Competenza (%)',
+        label: t('skills.chartLabel'),
         data: percentages,
         backgroundColor: languages.map((_, index) => {
           const colors = [
@@ -90,7 +98,7 @@ const Skill = () => {
       },
       title: {
         display: true,
-        text: 'Le Mie Competenze Tecniche',
+        text: t('skills.chartTitle'),
         font: {
           size: 18,
           family: 'Inter, sans-serif',
@@ -174,11 +182,11 @@ const Skill = () => {
   };
 
   const getSkillLevel = (percentage) => {
-    if (percentage >= 90) return 'Esperto';
-    if (percentage >= 80) return 'Avanzato';
-    if (percentage >= 70) return 'Intermedio';
-    if (percentage >= 60) return 'Base';
-    return 'Principiante';
+    if (percentage >= 90) return t('skills.level.expert');
+    if (percentage >= 80) return t('skills.level.advanced');
+    if (percentage >= 70) return t('skills.level.intermediate');
+    if (percentage >= 60) return t('skills.level.basic');
+    return t('skills.level.beginner');
   };
 
   return (
@@ -187,9 +195,9 @@ const Skill = () => {
       
       <div className="skills-content">
         <div className="skills-header">
-          <h1 className="skills-title">Le Mie Competenze</h1>
+          <h1 className="skills-title">{t('skills.title')}</h1>
           <p className="skills-subtitle">
-            Una panoramica delle tecnologie che padroneggio e del mio livello di competenza in ciascuna
+            {t('skills.subtitle')}
           </p>
         </div>
 
@@ -226,10 +234,10 @@ const Skill = () => {
                 ></div>
               </div>
               <div className="skill-level">
-                Livello: {getSkillLevel(parseInt(lang.percentuale))}
+                {t('skills.levelLabel')} {getSkillLevel(parseInt(lang.percentuale))}
               </div>
               <div className="skill-learn-more">
-                📚 Clicca per studiare →
+                {t('skills.learnMore')}
               </div>
             </div>
           ))}

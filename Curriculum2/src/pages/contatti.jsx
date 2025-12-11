@@ -1,39 +1,42 @@
 import Navbar from '../components/Navbar.jsx';
+import { useTranslation } from '../hooks/useTranslation';
 import './contatti.css';
 
 function Contatti() {
+  const { t } = useTranslation();
+  
   const contactInfo = [
     {
       type: 'email',
-      label: 'Email',
+      label: t('contacts.email.label'),
       value: 'xela9827@gmail.com',
       link: 'mailto:xela9827@gmail.com',
       icon: '✉️',
-      description: 'Scrivimi per opportunità lavorative o collaborazioni'
+      description: t('contacts.email.description')
     },
     {
       type: 'phone',
-      label: 'Telefono',
+      label: t('contacts.phone.label'),
       value: '+39 392 317 7199',
       link: 'tel:+393923177199',
       icon: '📱',
-      description: 'Chiamami per una consulenza diretta'
+      description: t('contacts.phone.description')
     },
     {
       type: 'linkedin',
-      label: 'LinkedIn',
+      label: t('contacts.linkedin.label'),
       value: 'Alessandro Amenta',
       link: 'https://www.linkedin.com/in/alessandro-amenta/',
       icon: '💼',
-      description: 'Connettiti con me su LinkedIn'
+      description: t('contacts.linkedin.description')
     },
     {
       type: 'github',
-      label: 'GitHub',
+      label: t('contacts.github.label'),
       value: 'AlessandroAmen',
       link: 'https://github.com/AlessandroAmen',
       icon: '💻',
-      description: 'Scopri i miei progetti e codice'
+      description: t('contacts.github.description')
     }
   ];
 
@@ -45,10 +48,9 @@ function Contatti() {
     <div className="contatti-page">
       <div className="contatti-container">
         <div className="contatti-header">
-          <h1>Mettiamoci in Contatto</h1>
+          <h1>{t('contacts.title')}</h1>
           <p className="contatti-subtitle">
-            Sono sempre aperto a nuove opportunità e collaborazioni interessanti. 
-            Non esitare a contattarmi!
+            {t('contacts.subtitle')}
           </p>
         </div>
 
@@ -74,23 +76,22 @@ function Contatti() {
 
         <div className="contact-cta">
           <div className="cta-content">
-            <h2>Hai un progetto in mente?</h2>
+            <h2>{t('contacts.cta.title')}</h2>
             <p>
-              Sono specializzato in sviluppo web moderno con React, Node.js e tecnologie full-stack. 
-              Trasformiamo le tue idee in realtà digitale!
+              {t('contacts.cta.description')}
             </p>
             <div className="cta-buttons">
               <a 
                 href="mailto:xela9827@gmail.com?subject=Opportunità di Collaborazione" 
                 className="cta-button primary"
               >
-                Scrivimi ora
+                {t('contacts.cta.writeNow')}
               </a>
               <a 
                 href="tel:+393923177199" 
                 className="cta-button secondary"
               >
-                Chiamami
+                {t('contacts.cta.call')}
               </a>
             </div>
           </div>
@@ -98,9 +99,9 @@ function Contatti() {
 
         <div className="contact-info">
           <div className="info-section">
-            <h3>Disponibilità</h3>
-            <p>Disponibile per progetti freelance e opportunità full-time</p>
-            <p>Tempo di risposta: entro 24 ore</p>
+            <h3>{t('contacts.availability.title')}</h3>
+            <p>{t('contacts.availability.description')}</p>
+            <p>{t('contacts.availability.responseTime')}</p>
           </div>
         </div>
       </div>

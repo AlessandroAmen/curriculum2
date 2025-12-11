@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navskill from '../components/Navskill';
+import { useTranslation } from '../hooks/useTranslation';
+import { translateSkill } from '../data/helpers/translateSkill';
 import './SkillDetail.css';
 
 const SkillDetail = () => {
   const { nome } = useParams(); 
   const navigate = useNavigate();
-  const languages = useSelector(state => state.languages);
+  const languagesRaw = useSelector(state => state.languages);
+  const { t, currentLanguage } = useTranslation();
   const [activeTab, setActiveTab] = useState('concetti');
   const [copiedIndex, setCopiedIndex] = useState(null);
+
+  // Traduci le skills in base alla lingua corrente
+  const languages = useMemo(() => {
+    return languagesRaw.map(skill => translateSkill(skill, currentLanguage));
+  }, [languagesRaw, currentLanguage]);
 
   const language = languages.find(lang => lang.nome.toLowerCase() === nome);
 
@@ -18,9 +26,9 @@ const SkillDetail = () => {
       <div className="skill-detail-page">
         <Navskill />
         <div className="not-found">
-          <h2>❌ Skill non trovata</h2>
+          <h2>{t('skillDetail.notFound.title')}</h2>
           <button onClick={() => navigate('/pages/skill')} className="back-button">
-            ← Torna alle Skills
+            {t('skillDetail.notFound.back')}
           </button>
         </div>
       </div>
@@ -62,14 +70,14 @@ const SkillDetail = () => {
         {/* Header */}
         <div className="skill-header">
           <button onClick={() => navigate('/pages/skill')} className="back-button">
-            ← Torna alle Skills
+            ← {t('skillDetail.notFound.back')}
           </button>
           <div className="skill-title-section">
             <span className="skill-icon-large">{getTechIcon(language.nome)}</span>
             <div>
               <h1 className="skill-name-large">{language.nome}</h1>
               <p className="skill-description">{language.descrizione}</p>
-              <div className="skill-level-badge">Competenza: {language.percentuale}</div>
+              <div className="skill-level-badge">{t('skills.levelLabel')} {language.percentuale}</div>
             </div>
           </div>
         </div>
@@ -80,25 +88,13 @@ const SkillDetail = () => {
             className={`tab-button ${activeTab === 'concetti' ? 'active' : ''}`}
             onClick={() => setActiveTab('concetti')}
           >
-            📚 Concetti Chiave
+            📚 {t('skillDetail.tabs.concepts')}
           </button>
           <button 
             className={`tab-button ${activeTab === 'esempi' ? 'active' : ''}`}
             onClick={() => setActiveTab('esempi')}
           >
-            💻 Esempi di Codice
-          </button>
-          <button 
-            className={`tab-button ${activeTab === 'esercizi' ? 'active' : ''}`}
-            onClick={() => setActiveTab('esercizi')}
-          >
-            🎯 Esercizi Pratici
-          </button>
-          <button 
-            className={`tab-button ${activeTab === 'tips' ? 'active' : ''}`}
-            onClick={() => setActiveTab('tips')}
-          >
-            💡 Tips per Coding Test
+            💻 {t('skillDetail.tabs.code')}
           </button>
         </div>
 
@@ -136,7 +132,7 @@ const SkillDetail = () => {
                       className="copy-button"
                       onClick={() => copyToClipboard(esempio.codice, index)}
                     >
-                      {copiedIndex === index ? '✅ Copiato!' : '📋 Copia'}
+                      {copiedIndex === index ? `✅ ${t('skillDetail.copied')}` : `📋 ${t('skillDetail.copy')}`}
                     </button>
                   </div>
                   {esempio.descrizione && <p className="esempio-desc">{esempio.descrizione}</p>}
@@ -154,62 +150,10 @@ const SkillDetail = () => {
             </div>
           )}
 
-          {/* Esercizi Pratici */}
-          {activeTab === 'esercizi' && language.esercizi && (
-            <div className="esercizi-section">
-              <h2>🎯 Mettiti alla Prova</h2>
-              {language.esercizi.map((esercizio, index) => (
-                <div key={index} className="esercizio-card">
-                  <div className="esercizio-number">Esercizio {index + 1}</div>
-                  <h3>{esercizio.titolo}</h3>
-                  <p className="esercizio-desc">{esercizio.descrizione}</p>
-                  {esercizio.requisiti && (
-                    <div className="esercizio-requisiti">
-                      <strong>Requisiti:</strong>
-                      <ul>
-                        {esercizio.requisiti.map((req, i) => (
-                          <li key={i}>{req}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  {esercizio.suggerimento && (
-                    <details className="esercizio-hint">
-                      <summary>💡 Suggerimento</summary>
-                      <p>{esercizio.suggerimento}</p>
-                    </details>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* Tips per Coding Test */}
-          {activeTab === 'tips' && language.codingTestTips && (
-            <div className="tips-section">
-              <h2>💡 Come Affrontare i Coding Test</h2>
-              {language.codingTestTips.map((tip, index) => (
-                <div key={index} className="tip-card">
-                  <div className="tip-icon">💡</div>
-                  <div className="tip-content">
-                    <h3>{tip.titolo}</h3>
-                    <p>{tip.contenuto}</p>
-                    {tip.esempio && (
-                      <pre className="tip-esempio">
-                        <code>{tip.esempio}</code>
-                      </pre>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-
           {/* Messaggio se non ci sono contenuti */}
           {!language[
             activeTab === 'concetti' ? 'concettiChiave' :
-            activeTab === 'esempi' ? 'esempiCodice' :
-            activeTab === 'esercizi' ? 'esercizi' : 'codingTestTips'
+            activeTab === 'esempi' ? 'esempiCodice' : null
           ] && (
             <div className="no-content">
               <p>📝 Contenuti in fase di preparazione...</p>

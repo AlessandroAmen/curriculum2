@@ -1,8 +1,10 @@
 import React from 'react';
 import './ProjectComponents.css';
 import { getTechColor } from '../data/helpers/projectHelpers';
+import { useTranslation } from '../hooks/useTranslation';
 
 const ProjectOverview = ({ project }) => {
+  const { t } = useTranslation();
   if (!project) return null;
 
   return (
@@ -13,12 +15,12 @@ const ProjectOverview = ({ project }) => {
           <p className="project-description">{project.detailedDescription}</p>
           
           <div className="project-objective">
-            <h3>🎯 Obiettivo</h3>
+            <h3>{t('projectOverview.objective')}</h3>
             <p>{project.objective}</p>
           </div>
 
           <div className="project-features">
-            <h3>✨ Funzionalità Principali</h3>
+            <h3>{t('projectOverview.features')}</h3>
             <ul>
               {project.features.map((feature, index) => (
                 <li key={index}>{feature}</li>
@@ -28,7 +30,7 @@ const ProjectOverview = ({ project }) => {
 
           {project.note && (
             <div className="project-note">
-              <h3>📝 Note</h3>
+              <h3>{t('projectOverview.note')}</h3>
               <p>{project.note}</p>
             </div>
           )}
@@ -36,15 +38,15 @@ const ProjectOverview = ({ project }) => {
 
         <div className="overview-sidebar">
           <div className="project-info-card">
-            <h3>Informazioni Progetto</h3>
+            <h3>{t('projectOverview.projectInfo')}</h3>
             
             <div className="info-item">
-              <span className="info-label">Categoria:</span>
+              <span className="info-label">{t('projectOverview.category')}</span>
               <span className="info-value">{project.category}</span>
             </div>
 
             <div className="info-item">
-              <span className="info-label">Tecnologie:</span>
+              <span className="info-label">{t('projectOverview.technologies')}</span>
               <div className="tech-tags">
                 {project.technologies.map((tech, index) => (
                   <span 
@@ -84,7 +86,7 @@ const ProjectOverview = ({ project }) => {
             <div className="learning-card">
               {project.challenges && (
                 <div className="challenges">
-                  <h4>🎯 Sfide Affrontate</h4>
+                  <h4>{t('projectOverview.challenges')}</h4>
                   <ul>
                     {project.challenges.map((challenge, index) => (
                       <li key={index}>{challenge}</li>
@@ -95,7 +97,7 @@ const ProjectOverview = ({ project }) => {
 
               {project.learnings && (
                 <div className="learnings">
-                  <h4>📚 Cosa Ho Imparato</h4>
+                  <h4>{t('projectOverview.learnings')}</h4>
                   <ul>
                     {project.learnings.map((learning, index) => (
                       <li key={index}>{learning}</li>

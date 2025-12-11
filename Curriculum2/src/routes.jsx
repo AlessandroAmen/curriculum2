@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 import App from './App.jsx';
 import Contatti from './pages/contatti.jsx';
 import Curriculum from './pages/curriculum.jsx';
-import CurriculumEN from './pages/curriculum-en.jsx';
 import Skill from './pages/skill.jsx';
 import Portfolio from './pages/portfolio.jsx';
 import ProjectDetail from './pages/ProjectDetail.jsx';
@@ -14,7 +13,6 @@ function AppRoutes() {
       <Route path="/" element={<App />} />
       <Route path="/pages/contattami" element={<Contatti />} />
       <Route path="/pages/curriculum" element={<Curriculum />} />
-      <Route path="/pages/curriculum-en" element={<CurriculumEN />} />
       <Route path="/pages/skill" element={<Skill />} />
       <Route path="/pages/portfolio" element={<Portfolio />} />
       <Route path="/pages/portfolio/:slug" element={<ProjectDetail />} />

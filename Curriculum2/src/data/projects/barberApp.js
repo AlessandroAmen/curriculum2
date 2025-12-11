@@ -5,7 +5,7 @@ export const barberAppData = {
   description: "App mobile completa per prenotazione appuntamenti dal barbiere, con backend Laravel e database TiDB",
   technologies: ["React Native", "Laravel", "TiDB", "PHP", "JavaScript"],
   category: "fullstack",
-  image: "/fotolinkedin.jpg",
+  image: "/barberappsfondo.png",
   frontendLink: "https://github.com/AlessandroAmen/frontend-barbierapp",
   backendLink: "https://github.com/AlessandroAmen/backend-backend-barbiere",
   liveLink: null,

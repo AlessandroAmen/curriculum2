@@ -5,7 +5,7 @@ export const assicurazioneGestionaleData = {
   description: "Sistema gestionale per invio automatico di messaggi WhatsApp tramite file CSV",
   technologies: ["React", "Node.js", "WhatsApp API", "CSV Processing"],
   category: "fullstack",
-  image: "/fotolinkedin.jpg",
+  image: "/gestionalewhatsappsfondo.png",
   frontendLink: null,
   backendLink: null,
   liveLink: null,

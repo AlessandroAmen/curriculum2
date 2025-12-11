@@ -15,7 +15,9 @@ export const sistemaGestionaleData = {
     "Dashboard amministrativa",
     "API RESTful"
   ],
-  detailedDescription: `Sistema web per la gestione aziendale sviluppato con Laravel, che include funzionalità complete di CRUD, autenticazione e pannello amministrativo.`,
+  detailedDescription: `Sistema web per la gestione aziendale sviluppato con Laravel, che include funzionalità complete di CRUD, autenticazione e pannello amministrativo. 
+
+Video demo: https://www.linkedin.com/posts/alessandro-amenta-940227354_forumweb-con-autenticazione-utente-e-gestione-activity-7323319441612521472-j37T`,
   objective: "Sviluppare competenze backend con Laravel",
   
   screenshots: [],

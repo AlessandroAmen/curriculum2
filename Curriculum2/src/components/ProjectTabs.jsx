@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { useTranslation } from '../hooks/useTranslation';
 import './ProjectComponents.css';
 
 const ProjectTabs = ({ activeTab, onTabChange, project }) => {
+  const { t } = useTranslation();
   const tabs = [
-    { id: 'overview', label: 'Panoramica', icon: '📋' },
-    { id: 'media', label: 'Media', icon: '📷' },
-    { id: 'code', label: 'Codice', icon: '💻' }
+    { id: 'overview', label: t('projectDetail.tabs.overview'), icon: '📋' },
+    { id: 'code', label: t('projectDetail.tabs.code'), icon: '💻' }
   ];
 
   return (

@@ -132,6 +132,13 @@
   transform: scale(1.05);
 }
 
+.status-indicators {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 .status-indicator {
   display: flex;
   align-items: center;

@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from './hooks/useTranslation'
 import './App.css'
 
 function App() {
   const [isVisible, setIsVisible] = useState(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     setIsVisible(true)
@@ -15,21 +17,20 @@ function App() {
         <div className={`hero-content ${isVisible ? 'fade-in' : ''}`}>
           <div className="hero-text">
             <h1 className="hero-title">
-              Ciao, sono <span className="highlight">Alessandro Amenta</span>
+              {t('homepage.hero.title')} <span className="highlight">{t('homepage.hero.name')}</span>
             </h1>
             <p className="hero-subtitle">
-              Sviluppatore Fullstack appassionato di tecnologie moderne
+              {t('homepage.hero.subtitle')}
             </p>
             <p className="hero-description">
-              Trasformo le mie passioni in codice, creando esperienze web innovative 
-              e user-friendly. Attualmente in crescita nel mondo dello sviluppo web.
+              {t('homepage.hero.description')}
             </p>
             <div className="hero-buttons">
               <Link to="/pages/curriculum" className="btn btn-primary">
-                Scopri il mio CV
+                {t('homepage.hero.buttonCV')}
               </Link>
               <Link to="/pages/skill" className="btn btn-secondary">
-                Le mie Skills
+                {t('homepage.hero.buttonSkills')}
               </Link>
             </div>
           </div>
@@ -40,9 +41,15 @@ function App() {
                 alt="Alessandro Amenta" 
                 className="profile-photo"
               />
-              <div className="status-indicator">
-                <span className="status-dot"></span>
-                Disponibile per progetti
+              <div className="status-indicators">
+                <div className="status-indicator">
+                  <span className="status-dot"></span>
+                  {t('homepage.hero.statusAvailable')}
+                </div>
+                <div className="status-indicator">
+                  <span className="status-dot"></span>
+                  {t('homepage.hero.statusWork')}
+                </div>
               </div>
             </div>
           </div>
@@ -51,31 +58,31 @@ function App() {
       
       <div className="features-section">
         <div className="container">
-          <h2 className="section-title">Cosa troverai qui</h2>
+          <h2 className="section-title">{t('homepage.features.title')}</h2>
           <div className="features-grid">
             <div className="feature-card">
               <div className="feature-icon">📄</div>
-              <h3>Curriculum Dettagliato</h3>
-              <p>La mia esperienza, competenze e obiettivi professionali</p>
-              <Link to="/pages/curriculum" className="feature-link">Leggi di più</Link>
+              <h3>{t('homepage.features.curriculum.title')}</h3>
+              <p>{t('homepage.features.curriculum.description')}</p>
+              <Link to="/pages/curriculum" className="feature-link">{t('homepage.features.curriculum.link')}</Link>
             </div>
             <div className="feature-card">
               <div className="feature-icon">🚀</div>
-              <h3>Skills Tecniche</h3>
-              <p>Le tecnologie che padroneggio con grafici interattivi</p>
-              <Link to="/pages/skill" className="feature-link">Esplora</Link>
+              <h3>{t('homepage.features.skills.title')}</h3>
+              <p>{t('homepage.features.skills.description')}</p>
+              <Link to="/pages/skill" className="feature-link">{t('homepage.features.skills.link')}</Link>
             </div>
             <div className="feature-card">
               <div className="feature-icon">�</div>
-              <h3>Portfolio</h3>
-              <p>I progetti che ho sviluppato utilizzando tecnologie moderne</p>
-              <Link to="/pages/portfolio" className="feature-link">Scopri</Link>
+              <h3>{t('homepage.features.portfolio.title')}</h3>
+              <p>{t('homepage.features.portfolio.description')}</p>
+              <Link to="/pages/portfolio" className="feature-link">{t('homepage.features.portfolio.link')}</Link>
             </div>
             <div className="feature-card">
               <div className="feature-icon">�📬</div>
-              <h3>Contattami</h3>
-              <p>Mettiamoci in contatto per future collaborazioni</p>
-              <Link to="/pages/contattami" className="feature-link">Scrivimi</Link>
+              <h3>{t('homepage.features.contacts.title')}</h3>
+              <p>{t('homepage.features.contacts.description')}</p>
+              <Link to="/pages/contattami" className="feature-link">{t('homepage.features.contacts.link')}</Link>
             </div>
           </div>
         </div>
