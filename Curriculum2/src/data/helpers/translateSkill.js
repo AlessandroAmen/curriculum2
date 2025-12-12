@@ -23,3 +23,4 @@ export const translateSkill = (skill, lang = 'it') => {
   return translatedSkill;
 };
 
+

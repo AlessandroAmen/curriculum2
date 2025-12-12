@@ -44,9 +44,16 @@ const ProjectDetail = () => {
   return (
     <div className="project-detail">
       <div className="project-header">
+        {project.image && (
+          <div className="project-cover">
+            <img src={project.image} alt={project.title} />
+            <div className="cover-overlay"></div>
+          </div>
+        )}
         <div className="header-content">
           <Link to="/pages/portfolio" className="back-link">
-            {t('projectDetail.back')}
+            <span className="back-arrow">←</span>
+            <span className="back-text">{t('projectDetail.back')}</span>
           </Link>
           <div className="project-title-section">
             <h1>{project.title}</h1>

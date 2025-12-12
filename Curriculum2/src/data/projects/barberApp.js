@@ -15,7 +15,9 @@ export const barberAppData = {
     "Calendario con slot disponibili", 
     "Pannello admin per gestione ruoli"
   ],
-  detailedDescription: `App mobile demo sviluppata con React Native e Laravel per dimostrare le mie competenze nello sviluppo mobile e backend. Permette agli utenti di prenotare appuntamenti con barbieri locali attraverso un'interfaccia intuitiva.`,
+  detailedDescription: `App mobile demo sviluppata con React Native e Laravel per dimostrare le mie competenze nello sviluppo mobile e backend. Permette agli utenti di prenotare appuntamenti con barbieri locali attraverso un'interfaccia intuitiva.
+
+Video demo: https://www.linkedin.com/posts/alessandro-amenta-940227354_demo-project-barber-appointment-booking-activity-7333482719865212928-ceVR`,
   objective: "Dimostrare le mie competenze di coding nell'sviluppo di applicazioni mobile e backend",
   note: "Primo progetto React Native - il codice può essere migliorato seguendo best practices",
   

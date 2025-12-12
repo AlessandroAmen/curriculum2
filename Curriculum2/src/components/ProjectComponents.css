@@ -24,6 +24,22 @@
   margin-bottom: 2rem;
 }
 
+.description-link {
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent-blue);
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin: 0 0.25rem;
+}
+
+.description-link:hover {
+  color: var(--accent-green);
+  border-bottom-color: var(--accent-green);
+  transform: translateY(-1px);
+}
+
 .project-objective,
 .project-features,
 .project-note {

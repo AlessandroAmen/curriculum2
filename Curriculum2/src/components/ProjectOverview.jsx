@@ -7,12 +7,52 @@ const ProjectOverview = ({ project }) => {
   const { t } = useTranslation();
   if (!project) return null;
 
+  // Funzione per renderizzare link cliccabili nella descrizione
+  const renderDescriptionWithLinks = (description) => {
+    if (!description) return description;
+    
+    // Pattern per rilevare URL
+    const urlPattern = /(https?:\/\/[^\s]+)/g;
+    const parts = description.split(urlPattern);
+    
+    return parts.map((part, index) => {
+      if (part.match(urlPattern)) {
+        // Determina il testo del link in base al tipo di URL e lingua
+        let linkText = 'Video demo';
+        if (part.includes('linkedin.com')) {
+          linkText = t('projectOverview.videoLink') || '🎥 Guarda il video su LinkedIn';
+        } else if (part.includes('youtube.com') || part.includes('youtu.be')) {
+          linkText = t('projectOverview.youtubeLink') || '🎥 Guarda il video su YouTube';
+        } else {
+          linkText = t('projectOverview.genericLink') || '🔗 Vai al link';
+        }
+        
+        return (
+          <React.Fragment key={index}>
+            {' '}
+            <a 
+              href={part} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="description-link"
+            >
+              {linkText}
+            </a>
+          </React.Fragment>
+        );
+      }
+      return <React.Fragment key={index}>{part}</React.Fragment>;
+    });
+  };
+
   return (
     <div className="project-overview">
       <div className="overview-grid">
         <div className="overview-main">
           <h2>{project.title}</h2>
-          <p className="project-description">{project.detailedDescription}</p>
+          <p className="project-description">
+            {renderDescriptionWithLinks(project.detailedDescription)}
+          </p>
           
           <div className="project-objective">
             <h3>{t('projectOverview.objective')}</h3>

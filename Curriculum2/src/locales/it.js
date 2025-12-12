@@ -40,6 +40,18 @@ export const it = {
         link: 'Scrivimi',
       },
     },
+    recruiter: {
+      title: 'Ho trasformato il mio CV in un portfolio interattivo',
+      description: 'Per i recruiter che vogliono conoscermi meglio:',
+      benefits: [
+        'Esplora i miei progetti in dettaglio con tecnologie e funzionalità',
+        'Visualizza le mie skills con grafici interattivi',
+        'Naviga tra progetti freelance e personali',
+        'Scarica il CV tradizionale in PDF',
+      ],
+      downloadCV: 'Scarica CV PDF',
+      explorePortfolio: 'Esplora Portfolio',
+    },
   },
   curriculum: {
     jobTitle: 'Full stack web developer',
@@ -260,7 +272,7 @@ export const it = {
     barberApp: {
       title: 'Barber Appointment Booking App',
       description: 'App mobile completa per prenotazione appuntamenti dal barbiere, con backend Laravel e database TiDB',
-      detailedDescription: 'App mobile demo sviluppata con React Native e Laravel per dimostrare le mie competenze nello sviluppo mobile e backend. Permette agli utenti di prenotare appuntamenti con barbieri locali attraverso un\'interfaccia intuitiva.',
+      detailedDescription: 'App mobile demo sviluppata con React Native e Laravel per dimostrare le mie competenze nello sviluppo mobile e backend. Permette agli utenti di prenotare appuntamenti con barbieri locali attraverso un\'interfaccia intuitiva. Video demo: https://www.linkedin.com/posts/alessandro-amenta-940227354_demo-project-barber-appointment-booking-activity-7333482719865212928-ceVR',
       objective: 'Dimostrare le mie competenze di coding nell\'sviluppo di applicazioni mobile e backend',
       note: 'Primo progetto React Native - il codice può essere migliorato seguendo best practices',
       features: [
@@ -443,6 +455,9 @@ export const it = {
     technologies: 'Tecnologie:',
     challenges: '🎯 Sfide Affrontate',
     learnings: '📚 Cosa Ho Imparato',
+    videoLink: '🎥 Guarda il video su LinkedIn',
+    youtubeLink: '🎥 Guarda il video su YouTube',
+    genericLink: '🔗 Vai al link',
   },
   skillsDescriptions: {
     HTML: 'Ottima strutturazione semantica del documento.',

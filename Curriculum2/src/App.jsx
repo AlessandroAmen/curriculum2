@@ -55,6 +55,35 @@ function App() {
           </div>
         </div>
       </div>
+
+      {/* Sezione per Recruiter */}
+      <div className="recruiter-section">
+        <div className="container">
+          <div className="recruiter-content">
+            <div className="recruiter-text">
+              <h2 className="recruiter-title">{t('homepage.recruiter.title')}</h2>
+              <p className="recruiter-description">{t('homepage.recruiter.description')}</p>
+              <ul className="recruiter-benefits">
+                {t('homepage.recruiter.benefits').map((benefit, index) => (
+                  <li key={index}>{benefit}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="recruiter-actions">
+              <a 
+                href="/Resume-Alessandro-Amenta.pdf" 
+                download 
+                className="btn btn-download"
+              >
+                📄 {t('homepage.recruiter.downloadCV')}
+              </a>
+              <Link to="/pages/portfolio" className="btn btn-secondary">
+                {t('homepage.recruiter.explorePortfolio')}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
       
       <div className="features-section">
         <div className="container">

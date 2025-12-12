@@ -40,6 +40,18 @@ export const en = {
         link: 'Write me',
       },
     },
+    recruiter: {
+      title: 'I\'ve transformed my CV into an interactive portfolio',
+      description: 'For recruiters who want to know me better:',
+      benefits: [
+        'Explore my projects in detail with technologies and features',
+        'View my skills with interactive charts',
+        'Browse through freelance and personal projects',
+        'Download the traditional CV in PDF',
+      ],
+      downloadCV: 'Download CV PDF',
+      explorePortfolio: 'Explore Portfolio',
+    },
   },
   curriculum: {
     jobTitle: 'Full stack web developer',
@@ -260,7 +272,7 @@ export const en = {
     barberApp: {
       title: 'Barber Appointment Booking App',
       description: 'Complete mobile app for barber appointment booking, with Laravel backend and TiDB database',
-      detailedDescription: 'Mobile demo app developed with React Native and Laravel to demonstrate my skills in mobile and backend development. Allows users to book appointments with local barbers through an intuitive interface.',
+      detailedDescription: 'Mobile demo app developed with React Native and Laravel to demonstrate my skills in mobile and backend development. Allows users to book appointments with local barbers through an intuitive interface. Demo video: https://www.linkedin.com/posts/alessandro-amenta-940227354_demo-project-barber-appointment-booking-activity-7333482719865212928-ceVR',
       objective: 'Demonstrate my coding skills in mobile application and backend development',
       note: 'First React Native project - code can be improved following best practices',
       features: [
@@ -443,6 +455,9 @@ export const en = {
     technologies: 'Technologies:',
     challenges: '🎯 Challenges Faced',
     learnings: '📚 What I Learned',
+    videoLink: '🎥 Watch video on LinkedIn',
+    youtubeLink: '🎥 Watch video on YouTube',
+    genericLink: '🔗 Go to link',
   },
   skillsDescriptions: {
     HTML: 'Excellent semantic document structuring.',
